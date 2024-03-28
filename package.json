@@ -1,6 +1,6 @@
 {
-  "name": "casco",
-  "version": "2.1.0",
+  "name": "scoop_haven",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

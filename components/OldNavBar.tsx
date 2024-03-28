@@ -14,7 +14,7 @@ const NavBar = () => {
           className={`container-fluid d-flex justify-content-between align-items-center ms-xl-4 ms-lg-4 ms-md-4 `}>
           <Link href={'/'} className="navbar-brand mb-0 mt-0">
             <Image
-              className="me-0 mb-0 mt-0 ms-1"
+              className="me-0 mb-0 mt-0 ms-1 "
               alt="casco logo"
               src={logo}
               width={150}

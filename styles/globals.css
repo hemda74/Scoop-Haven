@@ -7672,4 +7672,5 @@ div.table-responsive
 /* customize button localization */
 .btn {
   padding: 0.1rem 0.3rem !important;
+  background: #fff;
 }

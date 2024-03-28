@@ -1,9 +1,14 @@
 import React from 'react';
+import LocalizationBtn from './LocaliazationBtn';
+import { FaUser } from 'react-icons/fa';
+import { IoIosSearch } from 'react-icons/io';
 
-const MainPage = () => {
+import Link from 'next/link';
+
+const MainPageAr = () => {
   return (
     <>
-      <main>
+      <main dir="rtl">
         <section>
           <div className="row">
             <div className="col-md-12 col-lg-5 col-xl-4 col-xxl-5 order-1 order-lg-0 position-relative categories-left-side pb-lg-0 mb-lg-0 pb-3 mb-5">
@@ -1020,25 +1025,25 @@ const MainPage = () => {
                 <div className="theme-3-banner-leyer">
                   <div className="theme-3-header header-bg">
                     <div className="theme-3-iconbox">
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/login"
+                      <Link
+                        href="/login"
                         className="theme-3-icon-box my-svg-class iconwhiteadd text-color-class">
-                        <i className="fa-regular fa-user"></i>
-                      </a>
+                        <FaUser />
+                      </Link>
                       <div className="d-lg-block d-none">
                         <a
                           href="#"
                           className="theme-3-icon-box my-svg-class iconwhiteadd text-color-class"
                           data-bs-toggle="modal"
                           data-bs-target="#searchModal">
-                          <i className="fa-solid fa-magnifying-glass"></i>
+                          <IoIosSearch size={20} />
                         </a>
                       </div>
                     </div>
 
                     <div className="d-flex">
                       <div className="theme-3-language-dropdown">
-                        <div className="btn-group">
+                        {/* <div className="btn-group">
                           <a
                             className="nav-link mx-2"
                             href="#"
@@ -1089,6 +1094,9 @@ const MainPage = () => {
                               </a>
                             </li>
                           </ul>
+                        </div> */}
+                        <div className="mt-1">
+                          <LocalizationBtn />
                         </div>
                         <a
                           href="https://restro.infotechgravity.com/scoop-haven/cart"
@@ -1127,8 +1135,8 @@ const MainPage = () => {
                       </a>
                       <h2 className="theme-3-titlebanner">Scoop Haven</h2>
                       <h5 className="text-center pt-3">
-                        Scoop Haven is a charming ice cream parlor nestled in
-                        the heart of a picturesque town.
+                        سكوب هيفن هو محل آيس كريم ساحر يقع في قلب المدينة
+                        الخلابة
                       </h5>
                     </div>
                   </div>
@@ -1266,8 +1274,164 @@ const MainPage = () => {
           </div>
         </section>
       </main>
+      <div className="offcanvas-header border-bottom border-dark bg-light">
+        <p
+          className="title pb-1 fs-5 offcanvas-title text-center m-auto fw-600"
+          id="offcanvascategoriLabel">
+          Store Info
+        </p>
+        <button
+          type="button"
+          className="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <div className="offcanvas-body p-0">
+        <div className="row">
+          <div
+            className="col p-3"
+            data-bs-toggle="offcanvas"
+            role="button"
+            aria-controls="offcanvasinfo">
+            <div className="card">
+              <div className="card-body">
+                <div className="d-flex justify-content-between align-items-center">
+                  <a href="" className="store-info-logo-img">
+                    <img
+                      src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/logo/logo-65019bd9905f0.png"
+                      alt=""
+                      className="rounded-3"
+                    />
+                  </a>
+                  <div className="w-100 mx-3">
+                    <h5 className="mb-0 mb-md-2">Scoop Haven</h5>
+                    <div className="row g-2 align-items-center justify-content-between theme-4-contactinfo">
+                      <div className="col col-md-6">
+                        <a
+                          href="tel:919499874557"
+                          className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
+                          <i className="fa-solid fa-phone-volume"></i>
+                          <div className="d-md-block d-none">
+                            <span className="px-3"> Call US</span>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col col-md-6">
+                        <a
+                          href="mailto:scoophaven@gmail.com"
+                          className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
+                          <i className="fa-solid fa-envelope"></i>
+                          <div className="d-md-block d-none">
+                            <span className="px-3"> Email</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul className="list-group theme-3-store-infos-list">
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="https://www.google.com/maps/place/323/4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145">
+            <i className="fa-solid fa-location-dot"></i>
+            <span className="w-100">
+              <p className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+                4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145
+              </p>
+            </span>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="tel:919499874557">
+            <i className="fa-solid fa-headphones"></i>
+            <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+              Call US
+              <p>+919499874557</p>
+            </span>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="mailto:scoophaven@gmail.com">
+            <i className="fa-regular fa-envelope"></i>
+            <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+              Email
+              <p>scoophaven@gmail.com</p>
+            </span>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#examplehours"
+            data-bs-whatever="@mdo">
+            <i className="fa-regular fa-circle-question"></i>
+            <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+              <p
+                data-bs-toggle="modal"
+                data-bs-target="#examplehours"
+                data-bs-whatever="@mdo">
+                Working Hours
+              </p>
+            </span>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="https://restro.infotechgravity.com/scoop-haven/blog-list">
+            <i className="fa-regular fa-clipboard"></i>
+            <p className="px-2 fw-400">Blogs</p>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="https://restro.infotechgravity.com/scoop-haven/aboutus">
+            <i className="fa-regular fa-file-lines"></i>
+            <p className="px-2 fw-400">About us</p>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="https://restro.infotechgravity.com/scoop-haven/contact">
+            <i className="fa-regular fa-address-card"></i>
+            <p className="px-2 fw-400">Contact us</p>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="https://restro.infotechgravity.com/scoop-haven/terms_condition">
+            <i className="fa-regular fa-note-sticky"></i>
+            <p className="px-2 fw-400">Terms &amp; Conditions</p>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="https://restro.infotechgravity.com/scoop-haven/privacypolicy">
+            <i className="fa-solid fa-building-shield"></i>
+            <p className="px-2 fw-400">Privacy Policy</p>
+          </a>
+          <a
+            className="list-group-item rounded-0 d-flex align-items-center gap-2"
+            href="javascript:void(0)"
+            data-bs-toggle="modal"
+            data-bs-target="#subscribe_modal">
+            <i className="fa-solid fa-bell"></i>
+            <p
+              data-bs-toggle="modal"
+              data-bs-target="#subscribe_modal"
+              className="px-2 fw-400">
+              Subscribe
+            </p>
+          </a>
+        </ul>
+      </div>
+      <div className="offcanvas-footer">
+        <div className="row g-0 theme-3-footer my-3 border-top">
+          <div className="col rounded-3">
+            <p>Copyright © 2023 Gravity Infotech. All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
-export default MainPage;
+export default MainPageAr;

@@ -245,9 +245,9 @@ p {
 
 .small,
 small {
-  font-size: 13px;
+  font-size: 5px;
   font-family: var(--font-family);
-  color: lightslategray;
+  color: #fff;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -7668,4 +7668,8 @@ div.table-responsive
   > div.row
   > div[class^='col-']:last-child {
   padding-right: 0;
+}
+/* customize button localization */
+.btn {
+  padding: 0.1rem 0.3rem !important;
 }

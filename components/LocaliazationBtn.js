@@ -9,14 +9,14 @@ const LocalizationBtn = () => {
       {language === 'en' ? (
         <button
           onClick={toggleLanguage}
-          className={`btn ${styles.localizationBtn}`}>
-          <span>ع</span>
+          className={` btn ${styles.localizationBtn} m-0`}>
+          <small>ع</small>
         </button>
       ) : (
         <button
           onClick={toggleLanguage}
           className={`btn ${styles.localizationBtn}`}>
-          <span>E</span>
+          <small>E</small>
         </button>
       )}
     </div>

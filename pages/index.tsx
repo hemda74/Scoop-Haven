@@ -4,7 +4,8 @@ import { NextPageWithLayout } from './_app';
 import { useLanguage } from '../Context/LanguageContext';
 import Layout from '../components/Layout';
 import styles from '../styles/Main.module.css';
-import MainPage from '../components/MainPage';
+import MainPageAr from '../components/MainPageAr';
+import MainPageEn from '../components/MainPageEn';
 type Props = {};
 const Index: NextPageWithLayout = (props: Props) => {
   const { language } = useLanguage();
@@ -16,10 +17,12 @@ const Index: NextPageWithLayout = (props: Props) => {
       <Layout>
         {language === 'en' ? (
           <main className={`${styles.bodyContainer}`}>
-            <MainPage />
+            <MainPageEn />
           </main>
         ) : (
-          <main className={`${styles.bodyContainer}`}></main>
+          <main className={`${styles.bodyContainer}`}>
+            <MainPageAr />
+          </main>
         )}
       </Layout>
     </>

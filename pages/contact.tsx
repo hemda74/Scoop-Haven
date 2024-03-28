@@ -5,6 +5,7 @@ import { useLanguage } from '../Context/LanguageContext';
 import Layout from '../components/Layout';
 import styles from '../styles/Main.module.css';
 import MainPage from '../components/MainPage';
+import ContactUsEn from '../components/ContactUsEn';
 type Props = {};
 const Index: NextPageWithLayout = (props: Props) => {
   const { language } = useLanguage();
@@ -16,7 +17,7 @@ const Index: NextPageWithLayout = (props: Props) => {
       <Layout>
         {language === 'en' ? (
           <main className={`${styles.bodyContainer}`}>
-            <MainPage />
+            <ContactUsEn />
           </main>
         ) : (
           <main className={`${styles.bodyContainer}`}></main>

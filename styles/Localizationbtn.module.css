@@ -1,0 +1,18 @@
+/* localication Btn at Login page */
+.localizationBtn {
+    margin-top: -1rem;
+    color: white;
+    border: 2px solid #f8f9fa !important;
+    border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    -ms-border-radius: 5px !important;
+    -o-border-radius: 5px !important;
+}
+
+.localizationBtn:hover {
+    color: black;
+}
+@media (max-width:1025px){
+    
+}

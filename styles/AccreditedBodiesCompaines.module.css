@@ -1,0 +1,16 @@
+.mainDiv {
+  width: 100%;
+  margin: auto;
+}
+.bigDiv {
+  width: 189.167px !important;
+  border-radius: 0.55rem;
+}
+.imageDiv {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+.spanNumber {
+  color: var(--color-secondary);
+}

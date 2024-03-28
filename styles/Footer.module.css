@@ -1,0 +1,65 @@
+.footerCont {
+  background: #212529;
+  padding: 0 2rem 0;
+}
+.footerLink {
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+}
+.footerA {
+  background: #76b2fc00;
+  padding: 0.2rem 0.4rem 0.2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+.footerA:hover {
+  color: #fff !important;
+}
+.footerAhmed1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #999;
+  flex-wrap: wrap;
+}
+.footerAhmed {
+  color: #ccc;
+}
+.footerAhmed:hover {
+  color: #ffff !important;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.companybrief {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.subsIcon {
+  color: #fff !important;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+}
+.formControl {
+  border-radius: none !important;
+}
+.iconsSocial {
+  display: inline-flex;
+}
+.copyRightsDiv {
+  margin: auto;
+}
+@media (max-width: 480px) {
+  .copyRightsDiv {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import LocalizationBtn from './LocaliazationBtn';
+import FeaturedProducts from './FeaturedProducts';
 import {
   FaUser,
   FaLongArrowAltLeft,
@@ -94,7 +95,7 @@ const MainPageAr = () => {
               <div className="col-12 order-1 order-lg-0 px-0">
                 <div className="row categories-left-side position-relative">
                   <div className="col py-3">
-                    <div className="owl-carousel banner-imges-slider owl-theme owl-loaded owl-drag">
+                    {/* <div className="owl-carousel banner-imges-slider owl-theme owl-loaded owl-drag">
                       <div className="owl-stage-outer">
                         <div
                           className="owl-stage"
@@ -103,7 +104,7 @@ const MainPageAr = () => {
                             transition: 'all 0s ease 0s',
                             width: '1375px',
                           }}>
-                          <div
+                        <div
                             className="owl-item active"
                             style={{ width: '433.1px', marginRight: '25px' }}>
                             <div className="item">
@@ -159,14 +160,15 @@ const MainPageAr = () => {
                         </button>
                       </div>
                       <div className="owl-dots disabled"></div>
-                    </div>
+                    </div> */}
+                    <FeaturedProducts />
                   </div>
                   <div className="row p-0">
                     <section
                       id="gelato-IPViq"
                       className="theme-3-categoris-section px-0">
                       <div className="bg-light mb-3 margin_top">
-                        <p className="page-title mb-0 fs-5 px-2 py-2">Gelato</p>
+                        <p className="page-title mb-0 fs-5 px-5 py-2">Gelato</p>
                       </div>
                       <div
                         className="row align-items-center border-bottom py-3 pointer"
@@ -1139,8 +1141,8 @@ const MainPageAr = () => {
                       </a>
                       <h2 className="theme-3-titlebanner">Scoop Haven</h2>
                       <h5 className="text-center pt-3">
-                        سكوب هيفن هو محل آيس كريم ساحر يقع في قلب المدينة
-                        الخلابة
+                        Scoop Haven Is A Charming Ice Cream Parlor Nestled In
+                        The Heart Of A Picturesque Town.
                       </h5>
                     </div>
                   </div>

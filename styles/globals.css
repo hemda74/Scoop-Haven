@@ -948,7 +948,7 @@ del {
   display: flex;
 }
 
-.blogs-card .blogs-slider .owl-stage-outer .owl-stage .owl-item .item {
+.owl-item .item {
   height: 100%;
   padding-left: 5px;
 }
@@ -3863,7 +3863,7 @@ strong {
   justify-content: center;
 }
 
-.category-circle-theme-10 .owl-item.active {
+.owl-item {
   width: auto !important;
 }
 

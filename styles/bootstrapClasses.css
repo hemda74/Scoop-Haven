@@ -1,5 +1,4 @@
-/* * Customizable bootstrap classes
-.myPrimary {
+Customizable bootstrap classes .myPrimary {
   background-color: #3c84ab !important;
   color: #ffffff !important;
 }
@@ -300,4 +299,4 @@
 }
 .myBoxShadow-none {
   box-shadow: none !important;
-} */
+}

@@ -1,7 +1,15 @@
 import React from 'react';
 import LocalizationBtn from './LocaliazationBtn';
+import {
+  FaUser,
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+} from 'react-icons/fa';
+import { IoIosSearch } from 'react-icons/io';
 
-const MainPageEn = () => {
+import Link from 'next/link';
+
+const MainPageAr = () => {
   return (
     <>
       <main>
@@ -141,13 +149,13 @@ const MainPageEn = () => {
                           type="button"
                           role="presentation"
                           className="owl-prev disabled">
-                          <i className="fa-solid fa-arrow-left-long"></i>
+                          <FaLongArrowAltLeft />
                         </button>
                         <button
                           type="button"
                           role="presentation"
                           className="owl-next">
-                          <i className="fa-solid fa-arrow-right-long"></i>
+                          <FaLongArrowAltRight />
                         </button>
                       </div>
                       <div className="owl-dots disabled"></div>
@@ -1021,19 +1029,19 @@ const MainPageEn = () => {
                 <div className="theme-3-banner-leyer">
                   <div className="theme-3-header header-bg">
                     <div className="theme-3-iconbox">
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/login"
+                      <Link
+                        href="/login"
                         className="theme-3-icon-box my-svg-class iconwhiteadd text-color-class">
-                        <i className="fa-regular fa-user"></i>
-                      </a>
+                        <FaUser />
+                      </Link>
                       <div className="d-lg-block d-none">
-                        <a
-                          href="#"
-                          className="theme-3-icon-box my-svg-class iconwhiteadd text-color-class"
+                        <button
+                          type="button"
+                          className="btn theme-3-icon-box my-svg-class iconwhiteadd text-color-class"
                           data-bs-toggle="modal"
-                          data-bs-target="#searchModal">
-                          <i className="fa-solid fa-magnifying-glass"></i>
-                        </a>
+                          data-bs-target="#exampleModal">
+                          <IoIosSearch size={20} />
+                        </button>
                       </div>
                     </div>
 
@@ -1052,9 +1060,48 @@ const MainPageEn = () => {
                               className="language-dropdown-image"
                             />
                           </a>
-                         
+                          <ul className="dropdown-menu user-dropdown-menu">
+                            <li>
+                              <a
+                                className="dropdown-item language-items"
+                                href="https://restro.infotechgravity.com/lang/change?lang=en">
+                                <img
+                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2e343e92.png"
+                                  alt=""
+                                  className="language-items-img"
+                                />
+                                <span className="px-2">English</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                className="dropdown-item language-items"
+                                href="https://restro.infotechgravity.com/lang/change?lang=ar">
+                                <img
+                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2ebb7e1b.png"
+                                  alt=""
+                                  className="language-items-img"
+                                />
+                                <span className="px-2">Arabic</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                className="dropdown-item language-items"
+                                href="https://restro.infotechgravity.com/lang/change?lang=de">
+                                <img
+                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2f3f3681.jpeg"
+                                  alt=""
+                                  className="language-items-img"
+                                />
+                                <span className="px-2">German</span>
+                              </a>
+                            </li>
+                          </ul>
                         </div> */}
-                        <LocalizationBtn />
+                        <div className="mt-1">
+                          <LocalizationBtn />
+                        </div>
                         <a
                           href="https://restro.infotechgravity.com/scoop-haven/cart"
                           className="position-relative cart-icon-color d-lg-block d-none">
@@ -1092,8 +1139,8 @@ const MainPageEn = () => {
                       </a>
                       <h2 className="theme-3-titlebanner">Scoop Haven</h2>
                       <h5 className="text-center pt-3">
-                        Scoop Haven is a charming ice cream parlor nestled in
-                        the heart of a picturesque town.
+                        سكوب هيفن هو محل آيس كريم ساحر يقع في قلب المدينة
+                        الخلابة
                       </h5>
                     </div>
                   </div>
@@ -1387,8 +1434,115 @@ const MainPageEn = () => {
           </div>
         </div>
       </div>
+      {/* search modal */}
+      <div className="d-flex align-items-center float-end">
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex={-1}
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <span className="modal-title fs-3" id="exampleModalLabel">
+                  Modal title
+                </span>
+              </div>
+              <div className="modal-body px-3 px-md-4 mb-0">
+                <form
+                  className=""
+                  action="https://restro.infotechgravity.com/scoop-haven/search"
+                  method="get">
+                  <div className="col-12">
+                    <div className="row align-items-center justify-content-between g-0">
+                      <span>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </span>
+                      <div className="col-12">
+                        <input type="hidden" name="vendor_id" value="19" />
+                        <input
+                          type="text"
+                          placeholder="Ex.accessories, man, dresses, etc..."
+                          name="search"
+                          id="searchText"
+                          className="py-2 input-width px-2 mt-3 mb-1 w-100 border rounded-5 fs-7 search_input"
+                          value=""
+                        />
+                        <div className="search-btn-group">
+                          <div className="d-flex justify-content-between align-items-center mt-3 mt-md-4">
+                            <a
+                              type="submit"
+                              className="btn btn-danger w-100 p-3 rounded-0 rounded-3 m-1 text-center"
+                              data-bs-dismiss="modal">
+                              Cancel
+                            </a>
+                            <input
+                              type="submit"
+                              className="btn-primary w-100 rounded-0 rounded-3 m-1 text-center"
+                              value="Submit"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="offcanvas offcanvas-start"
+        tabIndex={-1}
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="offcanvasExampleLabel">
+            Offcanvas
+          </h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div className="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </div>
+          <div className="dropdown mt-3">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown">
+              Dropdown button
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="#">
+                  Action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Another action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
-export default MainPageEn;
+export default MainPageAr;

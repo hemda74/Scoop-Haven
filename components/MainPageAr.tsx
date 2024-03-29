@@ -1,6 +1,10 @@
 import React from 'react';
 import LocalizationBtn from './LocaliazationBtn';
-import { FaUser } from 'react-icons/fa';
+import {
+  FaUser,
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+} from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
 
 import Link from 'next/link';
@@ -78,9 +82,14 @@ const MainPageAr = () => {
                           </div>
                         </div>
                         <div className="d-flex justify-content-center">
-                          <button className="btn border mt-2">
+                          <a
+                            className="btn border mt-2"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasExample"
+                            role="button"
+                            aria-controls="offcanvasExample">
                             Store Info
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -145,13 +154,13 @@ const MainPageAr = () => {
                           type="button"
                           role="presentation"
                           className="owl-prev disabled">
-                          <i className="fa-solid fa-arrow-left-long"></i>
+                          <FaLongArrowAltLeft />
                         </button>
                         <button
                           type="button"
                           role="presentation"
                           className="owl-next">
-                          <i className="fa-solid fa-arrow-right-long"></i>
+                          <FaLongArrowAltRight />
                         </button>
                       </div>
                       <div className="owl-dots disabled"></div>
@@ -1469,8 +1478,8 @@ const MainPageAr = () => {
                         <div className="search-btn-group">
                           <div className="d-flex justify-content-between align-items-center mt-3 mt-md-4">
                             <a
-                              type="submit"
-                              className="btn btn-danger w-100 rounded-0 rounded-3 m-1 text-center"
+                              type="submit "
+                              className="btn myDanger w-100 rounded-0 rounded-3 m-1 text-center"
                               data-bs-dismiss="modal">
                               Cancel{' '}
                             </a>

@@ -1,16 +1,63 @@
 import React from 'react';
 import LocalizationBtn from './LocaliazationBtn';
 import FeaturedProducts from './FeaturedProducts';
-import {
-  FaUser,
-  FaLongArrowAltLeft,
-  FaLongArrowAltRight,
-} from 'react-icons/fa';
+import { FaUser, FaPlus, FaUtensils, FaAngleRight } from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
 
 import Link from 'next/link';
 
-const MainPageAr = () => {
+const MainPageEn = () => {
+  // Array of image URLs
+  const images = [
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/cod.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/razorpay.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/stripe.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/flutterwave.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/paystack.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/mercadopago.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/paypal.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/myfatoorah.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/toyyibpay.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/phonepe.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/paytab.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/mollie.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/khalti.png',
+    'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/xendit.png',
+  ];
+
+  // Array of product data
+  const Gelato_products = [
+    {
+      id: 1,
+      name: 'Blue Berry Ice Cream',
+      description:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      price: '€120.00',
+      discountedPrice: '€125.00',
+      imageUrl:
+        'https://restro.infotechgravity.com/storage/app/public/item/item-65018a0f15010.webp',
+    },
+    {
+      id: 2,
+      name: 'Vanilla Bean Ice Cream',
+      description:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      price: '€100.00',
+      discountedPrice: '€110.00',
+      imageUrl:
+        'https://restro.infotechgravity.com/storage/app/public/item/item-65018a303a21e.webp',
+    },
+    {
+      id: 3,
+      name: 'Chocolate Chip Cookie Dough Ice Cream',
+      description:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      price: '€130.00',
+      discountedPrice: '€135.00',
+      imageUrl:
+        'https://restro.infotechgravity.com/storage/app/public/item/item-65018a474ae12.webp',
+    },
+  ];
   return (
     <>
       <main>
@@ -25,65 +72,38 @@ const MainPageAr = () => {
                 <div className="card">
                   <div className="card-body">
                     <div className="align-items-center">
-                      <a href="#" className="theme-5-logo d-block text-center">
+                      <Link
+                        href="#"
+                        className="theme-5-logo d-block text-center">
                         <img
                           src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/logo/logo-65019bd9905f0.png"
                           alt=""
                           className="rounded-3"
                         />
-                      </a>
+                      </Link>
                       <div className="w-100">
                         <h5 className="mb-3 px-3 text-center">Scoop Haven</h5>
                         <div className="peyment-overflow d-flex">
                           <div className="theme-3-image-gallery">
                             <ul className="image-container pay-card-imag p-0 justify-content-center">
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/cod.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/razorpay.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/stripe.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/flutterwave.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/paystack.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/mercadopago.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/paypal.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/myfatoorah.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/toyyibpay.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/phonepe.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/paytab.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/mollie.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/khalti.png" />
-                              </li>
-                              <li>
-                                <img src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/xendit.png" />
-                              </li>
+                              {images.map((image, index) => (
+                                <li key={index}>
+                                  <img
+                                    src={image}
+                                    alt={`Payment Method ${index + 1}`}
+                                  />
+                                </li>
+                              ))}
                             </ul>
                           </div>
                         </div>
                         <div className="d-flex justify-content-center">
-                          <button className="btn border mt-2">
+                          <button
+                            className="btn border mt-2 pt-2 pb-2 ps-2 pe-2"
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample"
+                            aria-controls="offcanvasExample">
                             Store Info
                           </button>
                         </div>
@@ -95,282 +115,63 @@ const MainPageAr = () => {
               <div className="col-12 order-1 order-lg-0 px-0">
                 <div className="row categories-left-side position-relative">
                   <div className="col py-3">
-                    {/* <div className="owl-carousel banner-imges-slider owl-theme owl-loaded owl-drag">
-                      <div className="owl-stage-outer">
-                        <div
-                          className="owl-stage"
-                          style={{
-                            transform: 'translate3d(0px, 0px, 0px)',
-                            transition: 'all 0s ease 0s',
-                            width: '1375px',
-                          }}>
-                        <div
-                            className="owl-item active"
-                            style={{ width: '433.1px', marginRight: '25px' }}>
-                            <div className="item">
-                              <div className="overflow-hidden rounded-3">
-                                <img
-                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/banners/banner-6501c0a36fb81.webp"
-                                  alt=""
-                                  className="rounded-3"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            className="owl-item active"
-                            style={{ width: '433.1px', marginRight: '25px' }}>
-                            <div className="item">
-                              <div className="overflow-hidden rounded-3">
-                                <img
-                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/banners/banner-6501c0a8bb60d.webp"
-                                  alt=""
-                                  className="rounded-3"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            className="owl-item"
-                            style={{ width: '433.1px', marginRight: '25px' }}>
-                            <div className="item">
-                              <div className="overflow-hidden rounded-3">
-                                <img
-                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/banners/banner-6501c0ae76f5b.webp"
-                                  alt=""
-                                  className="rounded-3"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="owl-nav">
-                        <button
-                          type="button"
-                          role="presentation"
-                          className="owl-prev disabled">
-                          <FaLongArrowAltLeft />
-                        </button>
-                        <button
-                          type="button"
-                          role="presentation"
-                          className="owl-next">
-                          <FaLongArrowAltRight />
-                        </button>
-                      </div>
-                      <div className="owl-dots disabled"></div>
-                    </div> */}
                     <FeaturedProducts />
                   </div>
-                  <div className="row p-0">
+                  <div className="row px-5">
                     <section
                       id="gelato-IPViq"
                       className="theme-3-categoris-section px-0">
                       <div className="bg-light mb-3 margin_top">
-                        <p className="page-title mb-0 fs-5 px-5 py-2">Gelato</p>
+                        <p className="page-title mb-0 fs-5 py-2">Gelato</p>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">
-                                  Blue Berry Ice Cream
-                                </p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€120.00</span>
-                                    <del>€125.00</del>
+                      <div>
+                        {Gelato_products.map(Gelato_product => (
+                          <div
+                            key={Gelato_product.id}
+                            className="row align-items-center border-bottom py-3 pointer">
+                            <div className="col-12">
+                              <div className="card thme3categories dark">
+                                <div className="card-body p-0">
+                                  <div className="text-section">
+                                    <p className="title pb-1">
+                                      {Gelato_product.name}
+                                    </p>
+                                    <small className="mb-2 d_sm_none">
+                                      {Gelato_product.description}
+                                    </small>
+                                    <div className="d-flex align-items-baseline">
+                                      <div className="products-price">
+                                        <span className="price">
+                                          {Gelato_product.price}
+                                        </span>
+                                        <del>
+                                          {Gelato_product.discountedPrice}
+                                        </del>
+                                      </div>
+                                    </div>
+                                    <div className="d-flex align-items-center pt-1">
+                                      <div
+                                        className="load showload-200"
+                                        style={{ display: 'none' }}></div>
+                                      <a className="theme-3-product-icon addcartbtn-200">
+                                        <span className="text-white mb-1">
+                                          <FaPlus />
+                                        </span>
+                                      </a>
+                                    </div>
                                   </div>
                                 </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-200"
-                                    style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-200">
-                                    <i className="fa-solid fa-plus"></i>
-                                  </a>
+                                <div>
+                                  <img
+                                    src={Gelato_product.imageUrl}
+                                    className="card-img-top border"
+                                    alt="..."
+                                  />
                                 </div>
                               </div>
                             </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018a0f15010.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Brownie Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€110.00</span>
-                                    <del>€115.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-201"
-                                    style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-201">
-                                    <i className="fa-solid fa-plus"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018a303a21e.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Cherry</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€10.00</span>
-                                    <del>€15.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-202"
-                                    style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-202">
-                                    <i className="fa-solid fa-plus"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018a474ae12.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Cold Coco</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€50.00</span>
-                                    <del>€60.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-203"
-                                    style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-203">
-                                    <i className="fa-solid fa-plus"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018a66cd4d4.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Waffle Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€25.00</span>
-                                    <del>€45.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-204"
-                                    style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-204">
-                                    <i className="fa-solid fa-plus"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018a809c6a4.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </section>
                     <section
@@ -381,11 +182,7 @@ const MainPageAr = () => {
                           Mango Mojito
                         </p>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -406,7 +203,9 @@ const MainPageAr = () => {
                                     className="load showload-205"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-205">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -421,11 +220,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -448,7 +243,9 @@ const MainPageAr = () => {
                                     className="load showload-206"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-206">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -463,11 +260,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -488,7 +281,9 @@ const MainPageAr = () => {
                                     className="load showload-207"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-207">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -503,11 +298,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -528,7 +319,9 @@ const MainPageAr = () => {
                                     className="load showload-208"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-208">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -550,11 +343,7 @@ const MainPageAr = () => {
                       <div className="bg-light mb-3 margin_top">
                         <p className="page-title mb-0 fs-5 px-2 py-2">Kulfi</p>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -575,7 +364,9 @@ const MainPageAr = () => {
                                     className="load showload-209"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-209">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -590,11 +381,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -615,7 +402,9 @@ const MainPageAr = () => {
                                     className="load showload-210"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-210">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -630,11 +419,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -655,7 +440,9 @@ const MainPageAr = () => {
                                     className="load showload-211"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-211">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -670,11 +457,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -697,7 +480,9 @@ const MainPageAr = () => {
                                     className="load showload-212"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-212">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -712,11 +497,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -739,7 +520,9 @@ const MainPageAr = () => {
                                     className="load showload-213"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-213">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -754,11 +537,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -779,7 +558,9 @@ const MainPageAr = () => {
                                     className="load showload-214"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-214">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -803,11 +584,7 @@ const MainPageAr = () => {
                           Ice Cream Drinks
                         </p>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -828,7 +605,9 @@ const MainPageAr = () => {
                                     className="load showload-215"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-215">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -843,11 +622,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -868,7 +643,9 @@ const MainPageAr = () => {
                                     className="load showload-216"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-216">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -883,11 +660,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -908,7 +681,9 @@ const MainPageAr = () => {
                                     className="load showload-217"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-217">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -923,11 +698,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -948,7 +719,9 @@ const MainPageAr = () => {
                                     className="load showload-218"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-218">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -963,11 +736,7 @@ const MainPageAr = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className="row align-items-center border-bottom py-3 pointer"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
+                      <div className="row align-items-center border-bottom py-3 pointer">
                         <div className="col-12">
                           <div className="card thme3categories dark">
                             <div className="card-body p-0  ">
@@ -988,7 +757,9 @@ const MainPageAr = () => {
                                     className="load showload-219"
                                     style={{ display: 'none' }}></div>
                                   <a className="theme-3-product-icon addcartbtn-219">
-                                    <i className="fa-solid fa-plus"></i>
+                                    <span className="text-white mb-1">
+                                      <FaPlus />
+                                    </span>
                                   </a>
                                 </div>
                               </div>
@@ -1007,15 +778,16 @@ const MainPageAr = () => {
                   </div>
                   <div className="d-lg-block d-none">
                     <div className="scrollToTopBtn_main col-md-12 col-lg-5 col-xl-4 col-xxl-5 order-1 order-lg-0">
-                      <p
-                        data-bs-target="#offcanvascategori"
+                      <button
+                        className="browse_menu_btn gap-1"
+                        type="button"
                         data-bs-toggle="offcanvas"
-                        role="button"
-                        aria-controls="offcanvascategori"
-                        className="browse_menu_btn gap-1">
-                        <i className="fa-solid fa-utensils"></i>
+                        data-bs-target="#offcanvasScrolling"
+                        aria-controls="offcanvasScrolling">
+                        <FaUtensils />
+
                         <span>Menu</span>
-                      </p>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1049,58 +821,6 @@ const MainPageAr = () => {
 
                     <div className="d-flex">
                       <div className="theme-3-language-dropdown">
-                        {/* <div className="btn-group">
-                          <a
-                            className="nav-link mx-2"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img
-                              src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2e343e92.png"
-                              alt=""
-                              className="language-dropdown-image"
-                            />
-                          </a>
-                          <ul className="dropdown-menu user-dropdown-menu">
-                            <li>
-                              <a
-                                className="dropdown-item language-items"
-                                href="https://restro.infotechgravity.com/lang/change?lang=en">
-                                <img
-                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2e343e92.png"
-                                  alt=""
-                                  className="language-items-img"
-                                />
-                                <span className="px-2">English</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="dropdown-item language-items"
-                                href="https://restro.infotechgravity.com/lang/change?lang=ar">
-                                <img
-                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2ebb7e1b.png"
-                                  alt=""
-                                  className="language-items-img"
-                                />
-                                <span className="px-2">Arabic</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="dropdown-item language-items"
-                                href="https://restro.infotechgravity.com/lang/change?lang=de">
-                                <img
-                                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2f3f3681.jpeg"
-                                  alt=""
-                                  className="language-items-img"
-                                />
-                                <span className="px-2">German</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div> */}
                         <div className="mt-1">
                           <LocalizationBtn />
                         </div>
@@ -1280,57 +1000,64 @@ const MainPageAr = () => {
           </div>
         </section>
       </main>
-      <div className="offcanvas-header border-bottom border-dark bg-light">
-        <p
-          className="title pb-1 fs-5 offcanvas-title text-center m-auto fw-600"
-          id="offcanvascategoriLabel">
-          Store Info
-        </p>
-        <button
-          type="button"
-          className="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"></button>
-      </div>
-      <div className="offcanvas-body p-0">
-        <div className="row">
-          <div
-            className="col p-3"
-            data-bs-toggle="offcanvas"
-            role="button"
-            aria-controls="offcanvasinfo">
-            <div className="card">
-              <div className="card-body">
-                <div className="d-flex justify-content-between align-items-center">
-                  <a href="" className="store-info-logo-img">
-                    <img
-                      src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/logo/logo-65019bd9905f0.png"
-                      alt=""
-                      className="rounded-3"
-                    />
-                  </a>
-                  <div className="w-100 mx-3">
-                    <h5 className="mb-0 mb-md-2">Scoop Haven</h5>
-                    <div className="row g-2 align-items-center justify-content-between theme-4-contactinfo">
-                      <div className="col col-md-6">
-                        <a
-                          href="tel:919499874557"
-                          className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
-                          <i className="fa-solid fa-phone-volume"></i>
-                          <div className="d-md-block d-none">
-                            <span className="px-3"> Call US</span>
-                          </div>
-                        </a>
-                      </div>
-                      <div className="col col-md-6">
-                        <a
-                          href="mailto:scoophaven@gmail.com"
-                          className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
-                          <i className="fa-solid fa-envelope"></i>
-                          <div className="d-md-block d-none">
-                            <span className="px-3"> Email</span>
-                          </div>
-                        </a>
+      {/* backdrop menu for store info */}
+      <div
+        className="offcanvas offcanvas-start"
+        tabIndex={-1}
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div className="offcanvas-header border-bottom border-dark bg-light">
+          <p
+            className="title pb-1 fs-5 offcanvas-title text-center m-auto fw-600"
+            id="offcanvascategoriLabel">
+            Store Info
+          </p>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div className="offcanvas-body p-0">
+          <div className="row">
+            <div
+              className="col p-3"
+              data-bs-toggle="offcanvas"
+              role="button"
+              aria-controls="offcanvasinfo">
+              <div className="card">
+                <div className="card-body">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <a href="" className="store-info-logo-img">
+                      <img
+                        src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/logo/logo-65019bd9905f0.png"
+                        alt=""
+                        className="rounded-3"
+                      />
+                    </a>
+                    <div className="w-100 mx-3">
+                      <h5 className="mb-0 mb-md-2">Scoop Haven</h5>
+                      <div className="row g-2 align-items-center justify-content-between theme-4-contactinfo">
+                        <div className="col col-md-6">
+                          <a
+                            href="tel:919499874557"
+                            className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
+                            <i className="fa-solid fa-phone-volume"></i>
+                            <div className="d-md-block d-none">
+                              <span className="px-3"> Call US</span>
+                            </div>
+                          </a>
+                        </div>
+                        <div className="col col-md-6">
+                          <a
+                            href="mailto:scoophaven@gmail.com"
+                            className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
+                            <i className="fa-solid fa-envelope"></i>
+                            <div className="d-md-block d-none">
+                              <span className="px-3"> Email</span>
+                            </div>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1338,101 +1065,158 @@ const MainPageAr = () => {
               </div>
             </div>
           </div>
-        </div>
-        <ul className="list-group theme-3-store-infos-list">
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="https://www.google.com/maps/place/323/4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145">
-            <i className="fa-solid fa-location-dot"></i>
-            <span className="w-100">
-              <p className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-                4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145
-              </p>
-            </span>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="tel:919499874557">
-            <i className="fa-solid fa-headphones"></i>
-            <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-              Call US
-              <p>+919499874557</p>
-            </span>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="mailto:scoophaven@gmail.com">
-            <i className="fa-regular fa-envelope"></i>
-            <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-              Email
-              <p>scoophaven@gmail.com</p>
-            </span>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="#"
-            data-bs-toggle="modal"
-            data-bs-target="#examplehours"
-            data-bs-whatever="@mdo">
-            <i className="fa-regular fa-circle-question"></i>
-            <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+          <ul className="list-group theme-3-store-infos-list">
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="https://www.google.com/maps/place/323/4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145">
+              <i className="fa-solid fa-location-dot"></i>
+              <span className="w-100">
+                <p className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+                  4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145
+                </p>
+              </span>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="tel:919499874557">
+              <i className="fa-solid fa-headphones"></i>
+              <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+                Call US<p>+919499874557</p>
+              </span>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="mailto:scoophaven@gmail.com">
+              <i className="fa-regular fa-envelope"></i>
+              <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+                Email<p>scoophaven@gmail.com</p>
+              </span>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#examplehours"
+              data-bs-whatever="@mdo">
+              <i className="fa-regular fa-circle-question"></i>
+              <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
+                <p
+                  data-bs-toggle="modal"
+                  data-bs-target="#examplehours"
+                  data-bs-whatever="@mdo">
+                  Working Hours
+                </p>
+              </span>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="https://restro.infotechgravity.com/scoop-haven/blog-list">
+              <i className="fa-regular fa-clipboard"></i>
+              <p className="px-2 fw-400">Blogs</p>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="https://restro.infotechgravity.com/scoop-haven/aboutus">
+              <i className="fa-regular fa-file-lines"></i>
+              <p className="px-2 fw-400">About us</p>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="https://restro.infotechgravity.com/scoop-haven/contact">
+              <i className="fa-regular fa-address-card"></i>
+              <p className="px-2 fw-400">Contact us</p>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="https://restro.infotechgravity.com/scoop-haven/terms_condition">
+              <i className="fa-regular fa-note-sticky"></i>
+              <p className="px-2 fw-400">Terms &amp; Conditions</p>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="https://restro.infotechgravity.com/scoop-haven/privacypolicy">
+              <i className="fa-solid fa-building-shield"></i>
+              <p className="px-2 fw-400">Privacy Policy</p>
+            </a>
+            <a
+              className="list-group-item rounded-0 d-flex align-items-center gap-2"
+              href="javascript:void(0)"
+              data-bs-toggle="modal"
+              data-bs-target="#subscribe_modal">
+              <i className="fa-solid fa-bell"></i>
               <p
                 data-bs-toggle="modal"
-                data-bs-target="#examplehours"
-                data-bs-whatever="@mdo">
-                Working Hours
+                data-bs-target="#subscribe_modal"
+                className="px-2 fw-400">
+                Subscribe
               </p>
-            </span>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="https://restro.infotechgravity.com/scoop-haven/blog-list">
-            <i className="fa-regular fa-clipboard"></i>
-            <p className="px-2 fw-400">Blogs</p>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="https://restro.infotechgravity.com/scoop-haven/aboutus">
-            <i className="fa-regular fa-file-lines"></i>
-            <p className="px-2 fw-400">About us</p>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="https://restro.infotechgravity.com/scoop-haven/contact">
-            <i className="fa-regular fa-address-card"></i>
-            <p className="px-2 fw-400">Contact us</p>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="https://restro.infotechgravity.com/scoop-haven/terms_condition">
-            <i className="fa-regular fa-note-sticky"></i>
-            <p className="px-2 fw-400">Terms &amp; Conditions</p>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="https://restro.infotechgravity.com/scoop-haven/privacypolicy">
-            <i className="fa-solid fa-building-shield"></i>
-            <p className="px-2 fw-400">Privacy Policy</p>
-          </a>
-          <a
-            className="list-group-item rounded-0 d-flex align-items-center gap-2"
-            href="javascript:void(0)"
-            data-bs-toggle="modal"
-            data-bs-target="#subscribe_modal">
-            <i className="fa-solid fa-bell"></i>
-            <p
-              data-bs-toggle="modal"
-              data-bs-target="#subscribe_modal"
-              className="px-2 fw-400">
-              Subscribe
-            </p>
-          </a>
-        </ul>
-      </div>
-      <div className="offcanvas-footer">
-        <div className="row g-0 theme-3-footer my-3 border-top">
-          <div className="col rounded-3">
-            <p>Copyright © 2023 Gravity Infotech. All Rights Reserved</p>
+            </a>
+          </ul>
+        </div>
+        <div className="offcanvas-footer">
+          <div className="row g-0 theme-3-footer my-3 border-top">
+            <div className="col rounded-3">
+              <p>Copyright © 2023 Gravity Infotech. All Rights Reserved</p>
+            </div>
+          </div>
+        </div>
+        <div className="d-flex align-items-center float-end">
+          <div
+            className="modal fade"
+            id="exampleModal"
+            tabIndex={-1}
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <span className="modal-title fs-3" id="exampleModalLabel">
+                    Modal title
+                  </span>
+                </div>
+                <div className="modal-body px-3 px-md-4 mb-0">
+                  <form
+                    className=""
+                    action="https://restro.infotechgravity.com/scoop-haven/search"
+                    method="get">
+                    <div className="col-12">
+                      <div className="row align-items-center justify-content-between g-0">
+                        <span>
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry.
+                        </span>
+                        <div className="col-12">
+                          <input type="hidden" name="vendor_id" value="19" />
+                          <input
+                            type="text"
+                            placeholder="Ex.accessories, man, dresses, etc..."
+                            name="search"
+                            id="searchText"
+                            className="py-2 input-width px-2 mt-3 mb-1 w-100 border rounded-5 fs-7 search_input"
+                            value=""
+                          />
+                          <div className="search-btn-group">
+                            <div className="d-flex justify-content-between align-items-center mt-3 mt-md-4">
+                              <a
+                                type="submit "
+                                className="btn myDanger w-100 rounded-0 rounded-3 m-1 text-center"
+                                data-bs-dismiss="modal">
+                                Cancel{' '}
+                              </a>
+                              <input
+                                type="submit"
+                                className="btn-primary w-100 rounded-0 rounded-3 m-1 text-center"
+                                value="Submit"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1496,55 +1280,114 @@ const MainPageAr = () => {
           </div>
         </div>
       </div>
+      {/* backdrop menu for categories */}
       <div
         className="offcanvas offcanvas-start"
+        data-bs-scroll="true"
+        data-bs-backdrop="false"
         tabIndex={-1}
-        id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasExampleLabel">
-            Offcanvas
-          </h5>
+        id="offcanvasScrolling"
+        aria-labelledby="offcanvasScrollingLabel">
+        <div className="offcanvas-header border-bottom border-dark bg-light">
+          <p
+            className="title pb-1 fs-5 offcanvas-title text-center m-auto fw-600"
+            id="offcanvascategoriLabel">
+            Categories
+          </p>
           <button
             type="button"
             className="btn-close"
             data-bs-dismiss="offcanvas"
             aria-label="Close"></button>
         </div>
-        <div className="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-          </div>
-          <div className="dropdown mt-3">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="offcanvas-body p-0">
+          <ul className="list-group theme-4-categories-list">
+            <li className="list-group-item" data-bs-dismiss="offcanvas">
+              <Link href="#gelato-IPViq">
+                <div className="d-flex align-items-center gap-2">
+                  <img
+                    src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/category/category-6501898ade4b2.png"
+                    alt=""
+                    className="rounded-circle categories_imgbox"
+                  />
+                  <p className="text-black" style={{ textDecoration: 'none' }}>
+                    Gelato
+                  </p>
+                </div>
+                <div className="d-flex align-items-center">
+                  <span>5</span>
+
+                  <p className="text-black">
+                    <FaAngleRight size={25} />
+                  </p>
+                </div>
+              </Link>
+            </li>
+            <li className="list-group-item" data-bs-dismiss="offcanvas">
+              <Link href="#mango-mojito-R31wX">
+                <div className="d-flex align-items-center gap-2">
+                  <img
+                    src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/category/category-65018b85d2e70.png"
+                    alt=""
+                    className="rounded-circle categories_imgbox"
+                  />
+                  <p className="text-black" style={{ textDecoration: 'none' }}>
+                    Mango Mojito
+                  </p>
+                </div>
+                <div className="d-flex align-items-center">
+                  <span>4</span>
+                  <p className="text-black">
+                    <FaAngleRight size={25} />
+                  </p>
+                </div>
+              </Link>
+            </li>
+            <li className="list-group-item" data-bs-dismiss="offcanvas">
+              <Link href="#kulfi-BnwEQ">
+                <div className="d-flex align-items-center gap-2">
+                  <img
+                    src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/category/category-65018f29ed763.png"
+                    alt=""
+                    className="rounded-circle categories_imgbox"
+                  />
+                  <p className="text-black" style={{ textDecoration: 'none' }}>
+                    Kulfi
+                  </p>
+                </div>
+                <div className="d-flex align-items-center">
+                  <span>6</span>
+                  <p className="text-black">
+                    <FaAngleRight size={25} />
+                  </p>
+                </div>
+              </Link>
+            </li>
+            <li className="list-group-item" data-bs-dismiss="offcanvas">
+              <Link href="#ice-cream-drinks-YB92o">
+                <div className="d-flex align-items-center gap-2">
+                  <img
+                    src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/category/category-650192ab6e8e2.png"
+                    alt=""
+                    className="rounded-circle categories_imgbox"
+                  />
+                  <p className="text-black" style={{ textDecoration: 'none' }}>
+                    Ice Cream Drinks
+                  </p>
+                </div>
+                <div className="d-flex align-items-center">
+                  <span>5</span>
+                  <p className="text-black">
+                    <FaAngleRight size={25} />
+                  </p>
+                </div>
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </>
   );
 };
 
-export default MainPageAr;
+export default MainPageEn;

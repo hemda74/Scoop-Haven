@@ -8,6 +8,19 @@ Version: 3.6
 /*--------------------------------------------------------------
  # General
  --------------------------------------------------------------*/
+:root {
+  --bs-primary: #ffa0a0 !important;
+  --bs-secondary: #262a53 !important;
+  --secondary-color: #000 !important;
+  --font-family: 'Outfit', sans-serif !important;
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 576px;
+  --bs-breakpoint-md: 768px;
+  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-xl: 1200px;
+  --bs-breakpoint-xxl: 1400px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7673,4 +7686,10 @@ div.table-responsive
 .btn {
   padding: 0.1rem 0.3rem !important;
   background: #fff;
+}
+.thme3categories {
+  max-width: 100% !important;
+  flex-direction: row !important;
+  border: 0 !important;
+  align-items: center !important;
 }

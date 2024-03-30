@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import { toast } from 'react-hot-toast';
-import { X } from 'lucide-react';
-
+import { FaRegTimesCircle } from 'react-icons/fa';
 import useCart from '../../hooks/use-cart';
 import { Product } from '../../types';
 
@@ -17,22 +15,24 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
   };
 
   return (
-    <li className="flex py-6 border-b">
-      <div className="relative h-24 w-24 rounded-md overflow-hidden sm:h-48 sm:w-48">
-        <Image
-          fill
+    <li className="d-flex py-6 border-bottom">
+      <div className="position-relative h-24 w-24 rounded-md overflow-hidden d-flex align-items-center justify-content-center sm-h-48 sm-w-48">
+        <img
           src={data.imageUrl}
           alt=""
-          className="object-cover object-center"
+          className="img-fluid"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
       </div>
-      <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-        <div className="absolute z-10 right-0 top-0">
-          <button onClick={onRemove}>X</button>
+      <div className="position-relative ml-4 d-flex flex-column justify-content-between sm-ml-6">
+        <div className="position-absolute top-0 end-0">
+          <button onClick={onRemove}>
+            <FaRegTimesCircle />
+          </button>
         </div>
-        <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-          <div className="flex justify-between">
-            <p className=" text-lg font-semibold text-black">{data.name}</p>
+        <div className="position-relative pr-9 sm-grid sm-grid-cols-2 sm-gap-x-6 sm-pr-0">
+          <div className="d-flex justify-content-between">
+            <p className="text-lg fw-bold text-black">{data.name}</p>
           </div>
           <div>{data.price}</div>
         </div>

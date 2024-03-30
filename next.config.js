@@ -5,8 +5,8 @@ const nextConfig = {
   // images Configuration.
   images: {
     formats: ['image/avif', 'image/webp'],
+    domains: ['restro.infotechgravity.com'],
   },
-  
 };
 
 module.exports = nextConfig;

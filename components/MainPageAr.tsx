@@ -7,9 +7,11 @@ import { Product } from '../types';
 import Link from 'next/link';
 import useCart from '../hooks/use-cart';
 interface ProductCard {
+  items: Product[];
   data: Product;
 }
-const MainPageAr: React.FC<ProductCard> = ({ data }) => {
+
+const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
   // adding cart hook
   const cart = useCart();
   // on Add To Cart Function
@@ -36,42 +38,9 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
     'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/xendit.png',
   ];
 
-  // Array of product data
-  const products = [
-    {
-      id: '1',
-      name: 'Blue Berry Ice Cream',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      price: '€120.00',
-      discountedPrice: '€125.00',
-      imageUrl:
-        'https://restro.infotechgravity.com/storage/app/public/item/item-65018a0f15010.webp',
-    },
-    {
-      id: '2',
-      name: 'Vanilla Bean Ice Cream',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      price: '€100.00',
-      discountedPrice: '€110.00',
-      imageUrl:
-        'https://restro.infotechgravity.com/storage/app/public/item/item-65018a303a21e.webp',
-    },
-    {
-      id: '3',
-      name: 'Chocolate Chip Cookie Dough Ice Cream',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      price: '€130.00',
-      discountedPrice: '€135.00',
-      imageUrl:
-        'https://restro.infotechgravity.com/storage/app/public/item/item-65018a474ae12.webp',
-    },
-  ];
   return (
     <>
-      <main dir="rtl">
+      <main>
         <section>
           <div className="row">
             <div className="col-md-12 col-lg-5 col-xl-4 col-xxl-5 order-1 order-lg-0 position-relative categories-left-side pb-lg-0 mb-lg-0 pb-3 mb-5">
@@ -136,7 +105,7 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
                         <p className="page-title mb-0 fs-5 py-2">Gelato</p>
                       </div>
                       <div>
-                        {products.map(product => (
+                        {items.map(product => (
                           <div
                             key={product.id}
                             className="row align-items-center border-bottom py-3 pointer">
@@ -192,7 +161,7 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
                         </p>
                       </div>
                       <div>
-                        {products.map(product => (
+                        {items.map(product => (
                           <div
                             key={product.id}
                             className="row align-items-center border-bottom py-3 pointer">
@@ -246,7 +215,7 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
                         <p className="page-title mb-0 fs-5 px-2 py-2">Kulfi</p>
                       </div>
                       <div>
-                        {products.map(product => (
+                        {items.map(product => (
                           <div
                             key={product.id}
                             className="row align-items-center border-bottom py-3 pointer">
@@ -302,7 +271,7 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
                         </p>
                       </div>
                       <div>
-                        {products.map(product => (
+                        {items.map(product => (
                           <div
                             key={product.id}
                             className="row align-items-center border-bottom py-3 pointer">
@@ -682,36 +651,36 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
                 </p>
               </span>
             </a>
-            <a
+            <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
-              href="https://restro.infotechgravity.com/scoop-haven/blog-list">
+              href="/blog-list">
               <i className="fa-regular fa-clipboard"></i>
               <p className="px-2 fw-400">Blogs</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
-              href="https://restro.infotechgravity.com/scoop-haven/aboutus">
+              href="/aboutus">
               <i className="fa-regular fa-file-lines"></i>
               <p className="px-2 fw-400">About us</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
-              href="https://restro.infotechgravity.com/scoop-haven/contact">
+              href="/contact">
               <i className="fa-regular fa-address-card"></i>
               <p className="px-2 fw-400">Contact us</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
-              href="https://restro.infotechgravity.com/scoop-haven/terms_condition">
+              href="/terms_condition">
               <i className="fa-regular fa-note-sticky"></i>
-              <p className="px-2 fw-400">Terms &amp; Conditions</p>
-            </a>
-            <a
+              <p className="px-2 fw-400">Terms & Conditions</p>
+            </Link>
+            <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
-              href="https://restro.infotechgravity.com/scoop-haven/privacypolicy">
+              href="/privacypolicy">
               <i className="fa-solid fa-building-shield"></i>
               <p className="px-2 fw-400">Privacy Policy</p>
-            </a>
+            </Link>
             <a
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="javascript:void(0)"
@@ -964,4 +933,4 @@ const MainPageAr: React.FC<ProductCard> = ({ data }) => {
   );
 };
 
-export default MainPageAr;
+export default MainPageEn;

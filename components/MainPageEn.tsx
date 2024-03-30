@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import LocalizationBtn from './LocaliazationBtn';
 import FeaturedProducts from './FeaturedProducts';
 import { FaUser, FaPlus, FaUtensils, FaAngleRight } from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
-
+import { Product } from '../types';
 import Link from 'next/link';
+import useCart from '../hooks/use-cart';
+interface ProductCard {
+  data: Product;
+}
+const MainPageEn: React.FC<ProductCard> = ({ data }) => {
+  // adding cart hook
+  const cart = useCart();
+  // on Add To Cart Function
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = event => {
+    event.stopPropagation();
 
-const MainPageEn = () => {
+    cart.addItem(data);
+  };
   // Array of image URLs
   const images = [
     'https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/payment/cod.png',
@@ -28,7 +39,8 @@ const MainPageEn = () => {
   // Array of product data
   const Gelato_products = [
     {
-      id: 1,
+      id: '1',
+      id2: 1,
       name: 'Blue Berry Ice Cream',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -38,7 +50,8 @@ const MainPageEn = () => {
         'https://restro.infotechgravity.com/storage/app/public/item/item-65018a0f15010.webp',
     },
     {
-      id: 2,
+      id: '2',
+      id2: 2,
       name: 'Vanilla Bean Ice Cream',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -48,7 +61,8 @@ const MainPageEn = () => {
         'https://restro.infotechgravity.com/storage/app/public/item/item-65018a303a21e.webp',
     },
     {
-      id: 3,
+      id: '3',
+      id2: 3,
       name: 'Chocolate Chip Cookie Dough Ice Cream',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -127,7 +141,7 @@ const MainPageEn = () => {
                       <div>
                         {Gelato_products.map(Gelato_product => (
                           <div
-                            key={Gelato_product.id}
+                            key={Gelato_product.id2}
                             className="row align-items-center border-bottom py-3 pointer">
                             <div className="col-12">
                               <div className="card thme3categories dark">
@@ -153,11 +167,13 @@ const MainPageEn = () => {
                                       <div
                                         className="load showload-200"
                                         style={{ display: 'none' }}></div>
-                                      <a className="theme-3-product-icon addcartbtn-200">
+                                      <button
+                                        className="theme-3-product-icon "
+                                        onClick={onAddToCart}>
                                         <span className="text-white mb-1">
                                           <FaPlus />
                                         </span>
-                                      </a>
+                                      </button>
                                     </div>
                                   </div>
                                 </div>
@@ -202,11 +218,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-205"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-205">
+                                  <button
+                                    className="theme-3-product-icon "
+                                    onClick={onAddToCart}>
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -242,11 +260,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-206"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-206">
+                                  <button
+                                    className="theme-3-product-icon "
+                                    onClick={onAddToCart}>
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -280,11 +300,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-207"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-207">
+                                  <button
+                                    className="theme-3-product-icon "
+                                    onClick={onAddToCart}>
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -318,11 +340,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-208"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-208">
+                                  <button
+                                    className="theme-3-product-icon "
+                                    onClick={onAddToCart}>
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -363,11 +387,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-209"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-209">
+                                  <button
+                                    className="theme-3-product-icon "
+                                    onClick={onAddToCart}>
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -401,11 +427,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-210"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-210">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-210">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -439,11 +467,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-211"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-211">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-211">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -479,11 +509,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-212"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-212">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-212">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -519,11 +551,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-213"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-213">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-213">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -557,11 +591,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-214"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-214">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-214">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -604,11 +640,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-215"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-215">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-215">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -642,11 +680,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-216"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-216">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-216">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -680,11 +720,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-217"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-217">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-217">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -718,11 +760,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-218"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-218">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-218">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -756,11 +800,13 @@ const MainPageEn = () => {
                                   <div
                                     className="load showload-219"
                                     style={{ display: 'none' }}></div>
-                                  <a className="theme-3-product-icon addcartbtn-219">
+                                  <button
+                                    className="theme-3-product-icon a
+                                  onClick={onAddToCart}ddcartbtn-219">
                                     <span className="text-white mb-1">
                                       <FaPlus />
                                     </span>
-                                  </a>
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -842,7 +888,7 @@ const MainPageEn = () => {
                           <span
                             className="cart-counting-color svg-bg"
                             id="cartcount">
-                            0
+                            {cart.items.length}
                           </span>
                         </a>
                       </div>

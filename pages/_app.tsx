@@ -4,12 +4,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import type { AppProps } from 'next/app';
 import 'bootstrap/dist/css/bootstrap.min.css'; // impoting bootstrap.css file
 import { useEffect, ReactElement, ReactNode } from 'react';
-import { Provider } from 'react-redux';
 import transScript from '../helper/transScript';
 import indexTrans from '../localization/index.trans';
 import { NextPage } from 'next';
-import Head from 'next/head';
 import { LanguageProvider } from '../Context/LanguageContext';
+import ToastProvider from '../providers/toast-provider';
 
 // here we export the alias of next page with layout as optional.
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -40,11 +39,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   });
   return (
     <>
-      {/* <AuthGard> */}
+      <ToastProvider />
       <LanguageProvider>
         {getLayout(<Component {...pageProps} />)}
       </LanguageProvider>
-      {/* </AuthGard> */}
     </>
   );
 }

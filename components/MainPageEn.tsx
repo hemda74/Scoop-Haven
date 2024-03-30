@@ -7,9 +7,11 @@ import { Product } from '../types';
 import Link from 'next/link';
 import useCart from '../hooks/use-cart';
 interface ProductCard {
+  items: Product[];
   data: Product;
 }
-const MainPageEn: React.FC<ProductCard> = ({ data }) => {
+
+const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
   // adding cart hook
   const cart = useCart();
   // on Add To Cart Function
@@ -37,10 +39,9 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
   ];
 
   // Array of product data
-  const Gelato_products = [
+  const products = [
     {
       id: '1',
-      id2: 1,
       name: 'Blue Berry Ice Cream',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -51,7 +52,6 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
     },
     {
       id: '2',
-      id2: 2,
       name: 'Vanilla Bean Ice Cream',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -62,7 +62,6 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
     },
     {
       id: '3',
-      id2: 3,
       name: 'Chocolate Chip Cookie Dough Ice Cream',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -139,28 +138,24 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                         <p className="page-title mb-0 fs-5 py-2">Gelato</p>
                       </div>
                       <div>
-                        {Gelato_products.map(Gelato_product => (
+                        {products.map(product => (
                           <div
-                            key={Gelato_product.id2}
+                            key={product.id}
                             className="row align-items-center border-bottom py-3 pointer">
                             <div className="col-12">
                               <div className="card thme3categories dark">
                                 <div className="card-body p-0">
                                   <div className="text-section">
-                                    <p className="title pb-1">
-                                      {Gelato_product.name}
-                                    </p>
+                                    <p className="title pb-1">{product.name}</p>
                                     <small className="mb-2 d_sm_none">
-                                      {Gelato_product.description}
+                                      {product.description}
                                     </small>
                                     <div className="d-flex align-items-baseline">
                                       <div className="products-price">
                                         <span className="price">
-                                          {Gelato_product.price}
+                                          {product.price}
                                         </span>
-                                        <del>
-                                          {Gelato_product.discountedPrice}
-                                        </del>
+                                        <del>{product.discountedPrice}</del>
                                       </div>
                                     </div>
                                     <div className="d-flex align-items-center pt-1">
@@ -179,7 +174,7 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                                 </div>
                                 <div>
                                   <img
-                                    src={Gelato_product.imageUrl}
+                                    src={product.imageUrl}
                                     className="card-img-top border"
                                     alt="..."
                                   />
@@ -198,167 +193,52 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                           Mango Mojito
                         </p>
                       </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Chocolate</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€50.00</span>
-                                    <del>€85.00</del>
+                      <div>
+                        {products.map(product => (
+                          <div
+                            key={product.id}
+                            className="row align-items-center border-bottom py-3 pointer">
+                            <div className="col-12">
+                              <div className="card thme3categories dark">
+                                <div className="card-body p-0">
+                                  <div className="text-section">
+                                    <p className="title pb-1">{product.name}</p>
+                                    <small className="mb-2 d_sm_none">
+                                      {product.description}
+                                    </small>
+                                    <div className="d-flex align-items-baseline">
+                                      <div className="products-price">
+                                        <span className="price">
+                                          {product.price}
+                                        </span>
+                                        <del>{product.discountedPrice}</del>
+                                      </div>
+                                    </div>
+                                    <div className="d-flex align-items-center pt-1">
+                                      <div
+                                        className="load showload-200"
+                                        style={{ display: 'none' }}></div>
+                                      <button
+                                        className="theme-3-product-icon "
+                                        onClick={onAddToCart}>
+                                        <span className="text-white mb-1">
+                                          <FaPlus />
+                                        </span>
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-205"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon "
-                                    onClick={onAddToCart}>
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
+                                <div>
+                                  <img
+                                    src={product.imageUrl}
+                                    className="card-img-top border"
+                                    alt="..."
+                                  />
                                 </div>
                               </div>
                             </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018bfb520fd.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">
-                                  Fresh Fruit Ice Cream
-                                </p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€20.00</span>
-                                    <del>€25.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-206"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon "
-                                    onClick={onAddToCart}>
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018c0dcf77b.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Oreo Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€30.00</span>
-                                    <del>€35.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-207"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon "
-                                    onClick={onAddToCart}>
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018c2571271.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Blue Moon</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€18.00</span>
-                                    <del>€20.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-208"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon "
-                                    onClick={onAddToCart}>
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65018c39e9cdf.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </section>
                     <section
@@ -367,249 +247,52 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                       <div className="bg-light mb-3 margin_top">
                         <p className="page-title mb-0 fs-5 px-2 py-2">Kulfi</p>
                       </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Caramel Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€25.00</span>
-                                    <del>€30.00</del>
+                      <div>
+                        {products.map(product => (
+                          <div
+                            key={product.id}
+                            className="row align-items-center border-bottom py-3 pointer">
+                            <div className="col-12">
+                              <div className="card thme3categories dark">
+                                <div className="card-body p-0">
+                                  <div className="text-section">
+                                    <p className="title pb-1">{product.name}</p>
+                                    <small className="mb-2 d_sm_none">
+                                      {product.description}
+                                    </small>
+                                    <div className="d-flex align-items-baseline">
+                                      <div className="products-price">
+                                        <span className="price">
+                                          {product.price}
+                                        </span>
+                                        <del>{product.discountedPrice}</del>
+                                      </div>
+                                    </div>
+                                    <div className="d-flex align-items-center pt-1">
+                                      <div
+                                        className="load showload-200"
+                                        style={{ display: 'none' }}></div>
+                                      <button
+                                        className="theme-3-product-icon "
+                                        onClick={onAddToCart}>
+                                        <span className="text-white mb-1">
+                                          <FaPlus />
+                                        </span>
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-209"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon "
-                                    onClick={onAddToCart}>
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
+                                <div>
+                                  <img
+                                    src={product.imageUrl}
+                                    className="card-img-top border"
+                                    alt="..."
+                                  />
                                 </div>
                               </div>
                             </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65019180d75e4.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Cherry</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€45.00</span>
-                                    <del>€48.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-210"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-210">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-6501919b84da6.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Chocolate Icecream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€50.00</span>
-                                    <del>€55.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-211"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-211">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-650191b11a8c4.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">
-                                  Chocolate Vanila Ice Cream
-                                </p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€55.00</span>
-                                    <del>€60.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-212"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-212">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-650191ca07d1f.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">
-                                  Fresh Fruit Ice Cream
-                                </p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€20.00</span>
-                                    <del>€25.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-213"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-213">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-650191dc09193.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Ice Cream Cone</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€22.00</span>
-                                    <del>€25.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-214"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-214">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-650191ed55907.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </section>
                     <section
@@ -620,205 +303,52 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                           Ice Cream Drinks
                         </p>
                       </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Chocolate Icecream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€18.00</span>
-                                    <del>€20.00</del>
+                      <div>
+                        {products.map(product => (
+                          <div
+                            key={product.id}
+                            className="row align-items-center border-bottom py-3 pointer">
+                            <div className="col-12">
+                              <div className="card thme3categories dark">
+                                <div className="card-body p-0">
+                                  <div className="text-section">
+                                    <p className="title pb-1">{product.name}</p>
+                                    <small className="mb-2 d_sm_none">
+                                      {product.description}
+                                    </small>
+                                    <div className="d-flex align-items-baseline">
+                                      <div className="products-price">
+                                        <span className="price">
+                                          {product.price}
+                                        </span>
+                                        <del>{product.discountedPrice}</del>
+                                      </div>
+                                    </div>
+                                    <div className="d-flex align-items-center pt-1">
+                                      <div
+                                        className="load showload-200"
+                                        style={{ display: 'none' }}></div>
+                                      <button
+                                        className="theme-3-product-icon "
+                                        onClick={onAddToCart}>
+                                        <span className="text-white mb-1">
+                                          <FaPlus />
+                                        </span>
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-215"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-215">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
+                                <div>
+                                  <img
+                                    src={product.imageUrl}
+                                    className="card-img-top border"
+                                    alt="..."
+                                  />
                                 </div>
                               </div>
                             </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-650193fe206e2.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Caramel Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€15.00</span>
-                                    <del>€20.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-216"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-216">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-650194131e567.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Brownie Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€25.00</span>
-                                    <del>€28.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-217"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-217">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-6501942b8ebaf.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Chocolate</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€60.00</span>
-                                    <del>€80.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-218"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-218">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-6501943c46888.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row align-items-center border-bottom py-3 pointer">
-                        <div className="col-12">
-                          <div className="card thme3categories dark">
-                            <div className="card-body p-0  ">
-                              <div className="text-section">
-                                <p className="title pb-1">Oreo Ice Cream</p>
-                                <small className="mb-2 d_sm_none">
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry.
-                                </small>
-                                <div className="d-flex align-items-baseline">
-                                  <div className="products-price">
-                                    <span className="price">€15.00</span>
-                                    <del>€18.00</del>
-                                  </div>
-                                </div>
-                                <div className="d-flex align-items-center pt-1">
-                                  <div
-                                    className="load showload-219"
-                                    style={{ display: 'none' }}></div>
-                                  <button
-                                    className="theme-3-product-icon a
-                                  onClick={onAddToCart}ddcartbtn-219">
-                                    <span className="text-white mb-1">
-                                      <FaPlus />
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div>
-                              <img
-                                src=" https://restro.infotechgravity.com/storage/app/public/item/item-65019450c9b19.webp "
-                                className="card-img-top border"
-                                alt="..."
-                              />
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </section>
                   </div>
@@ -870,8 +400,8 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                         <div className="mt-1">
                           <LocalizationBtn />
                         </div>
-                        <a
-                          href="https://restro.infotechgravity.com/scoop-haven/cart"
+                        <Link
+                          href="/cart"
                           className="position-relative cart-icon-color d-lg-block d-none">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -890,7 +420,7 @@ const MainPageEn: React.FC<ProductCard> = ({ data }) => {
                             id="cartcount">
                             {cart.items.length}
                           </span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

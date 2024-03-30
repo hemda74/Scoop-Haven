@@ -9,14 +9,24 @@ const LocalizationBtn = () => {
       {language === 'en' ? (
         <button
           onClick={toggleLanguage}
-          className={` btn ${styles.localizationBtn} m-0`}>
-          <small>ع</small>
+          className={`btn ${styles.localizationBtn}`}>
+          <img
+            src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2ebb7e1b.png"
+            alt=""
+            className="language-items-img"
+          />
+          <span className="px-2">Arabic</span>
         </button>
       ) : (
         <button
           onClick={toggleLanguage}
           className={`btn ${styles.localizationBtn}`}>
-          <small>E</small>
+          <img
+            src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/language/flag-6512d2e343e92.png"
+            alt=""
+            className="language-items-img"
+          />
+          <span className="px-2">English</span>
         </button>
       )}
     </div>

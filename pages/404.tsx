@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import FourOhFourImage from '../public/404.svg'
+import FourOhFourImage from '../public/404.svg';
 type Props = {};
 // a customized 404 page.
 const FourOhFour: NextPage = (props: Props) => {
@@ -11,11 +11,9 @@ const FourOhFour: NextPage = (props: Props) => {
         <div className="vh-100 align-items-center justify-content-center">
           <div className="">
             <div className="d-flex flex-column justify-content-center align-items-center w-80">
-              <h1 className="fw-bold " data-trans="fourOhfourNotFound">
-                Page Not Found
-              </h1>
-              <h3 className="myPrimary-Text" data-trans="fourOhfourMsg">
-                 {`Looks Like this page doesn't Exist.`}
+              <h1 className="fw-bold ">Page Not Found</h1>
+              <h3 className="myPrimary-Text">
+                {`Looks Like this page doesn't Exist.`}
               </h3>
             </div>
           </div>
@@ -29,11 +27,10 @@ const FourOhFour: NextPage = (props: Props) => {
           </div>
         </div>
         <style jsx>{`
-        .container {
-          margin-top: 15rem;
-        }
-        
-      `}</style>
+          .container {
+            margin-top: 15rem;
+          }
+        `}</style>
       </div>
     </>
   );

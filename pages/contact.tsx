@@ -4,8 +4,9 @@ import { NextPageWithLayout } from './_app';
 import { useLanguage } from '../Context/LanguageContext';
 import Layout from '../components/Layout';
 import styles from '../styles/Main.module.css';
-import MainPage from '../components/MainPageAr';
 import ContactUsEn from '../components/ContactUsEn';
+import ViewerLayout from '../layouts/ViewerLayout';
+import ContactUsAr from '../components/ContactUsAr';
 type Props = {};
 const Index: NextPageWithLayout = (props: Props) => {
   const { language } = useLanguage();
@@ -20,10 +21,16 @@ const Index: NextPageWithLayout = (props: Props) => {
             <ContactUsEn />
           </main>
         ) : (
-          <main className={`${styles.bodyContainer}`}></main>
+          <main className={`${styles.bodyContainer}`}>
+            <ContactUsAr />
+          </main>
         )}
       </Layout>
     </>
   );
+};
+// adding Layout
+Index.getLayout = function getLayout(Index: ReactElement) {
+  return <ViewerLayout childern={Index}></ViewerLayout>;
 };
 export default Index;

@@ -12,14 +12,12 @@ const NewNavBar = () => {
         <div className="header-main fixed-top">
           <div className="container">
             <div className="Navbar">
-              <a
-                href="https://restro.infotechgravity.com/scoop-haven"
-                className="logo mx-2">
+              <Link href="/" className="logo mx-2">
                 <img
                   src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/logo/logo-65019bd9905f0.png"
                   alt=""
                 />
-              </a>
+              </Link>
               <div className="d-flex align-items-center gap-3">
                 <nav className="align-items-center menu">
                   <ul className="navbar-nav header-menu-items">

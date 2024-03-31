@@ -9,6 +9,7 @@ import indexTrans from '../localization/index.trans';
 import { NextPage } from 'next';
 import { LanguageProvider } from '../Context/LanguageContext';
 import ToastProvider from '../providers/toast-provider';
+import Head from 'next/head';
 
 // here we export the alias of next page with layout as optional.
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -39,6 +40,14 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   });
   return (
     <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <ToastProvider />
       <LanguageProvider>
         {getLayout(<Component {...pageProps} />)}

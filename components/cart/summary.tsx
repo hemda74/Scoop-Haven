@@ -27,12 +27,9 @@ const Summary = () => {
   }, 0);
 
   const onCheckout = async () => {
-    const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
-      {
-        productIds: items.map(item => item.id),
-      }
-    );
+    const response = await axios.post(`/checkout`, {
+      productIds: items.map(item => item.id),
+    });
 
     window.location = response.data.url;
   };
@@ -49,7 +46,7 @@ const Summary = () => {
       <button
         onClick={onCheckout}
         disabled={items.length === 0}
-        className="w-100 mt-6">
+        className="w-100 mt-3">
         Checkout
       </button>
     </div>

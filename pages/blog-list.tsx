@@ -4,7 +4,7 @@ import { NextPageWithLayout } from './_app';
 import { useLanguage } from '../Context/LanguageContext';
 import Layout from '../components/Layout';
 import styles from '../styles/Main.module.css';
-
+import ViewerLayout from '../layouts/ViewerLayout';
 import BlogEn from '../components/BlogEn';
 import BlogAr from '../components/BlogAr';
 
@@ -29,5 +29,9 @@ const Index: NextPageWithLayout = (props: Props) => {
       </Layout>
     </>
   );
+};
+// adding Layout
+Index.getLayout = function getLayout(Index: ReactElement) {
+  return <ViewerLayout childern={Index}></ViewerLayout>;
 };
 export default Index;

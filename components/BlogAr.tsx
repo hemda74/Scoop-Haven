@@ -3,7 +3,7 @@ import React from 'react';
 const BlogAr = () => {
   return (
     <>
-      <div className="mobile-menu-footer  d-lg-none">
+      {/* <div className="mobile-menu-footer  d-lg-none">
         <ul className="d-flex align-items-center mobile-menu-active p-0 m-0">
           <li className="nav-link position-relative">
             <a
@@ -43,7 +43,7 @@ const BlogAr = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className="breadcrumb-sec">
         <div className="container">
           <nav className="px-3">
@@ -711,173 +711,6 @@ const BlogAr = () => {
           </div>
         </div>
       </section>
-      <footer className="mt-25 mb-lg-0 mb-5 pb-lg-0 pb-3">
-        <div className="container">
-          <div className="row pt-5">
-            <div className="col-lg-4 col-md-12 col-sm-4 col-12 mb-md-4 mb-lg-0">
-              <a
-                href="https://restro.infotechgravity.com/scoop-haven"
-                className="footer-logo text-white">
-                <img
-                  src="https://restro.infotechgravity.com/storage/app/public/admin-assets/images/about/logo/logo-65019bd9905f0.png"
-                  alt=""
-                />
-              </a>
-              <p className="footersubtitle">
-                {' '}
-                Scoop Haven is a charming ice cream parlor nestled in the heart
-                of a picturesque town.
-              </p>
-            </div>
-            <hr className="w-100 clearfix d-md-none" />
-            <div className="col-lg-8 col-md-12 col-sm-8 col-12">
-              <div className="row justify-content-lg-end justify-content-md-between">
-                <div className="col-md-4 col-6 mb-4 mb-md-0 px-0 ">
-                  <h5 className="footer-title"> Links</h5>
-                  <ul className="footer-right-side">
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven"
-                        className="mb-3">
-                        Home
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/contact"
-                        className="mb-3">
-                        Contact us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/tablebook"
-                        className="mb-3">
-                        Table Book
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/blog-list"
-                        className="mb-3">
-                        Blogs
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 col-6 mb-4 mb-md-0 px-0 ">
-                  <h5 className="footer-title"> Other Pages</h5>
-                  <ul className="footer-right-side">
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/aboutus"
-                        className="mb-3">
-                        About us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/terms_condition"
-                        className="mb-3">
-                        Terms &amp; Conditions
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/privacypolicy"
-                        className="mb-3">
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/refundprivacypolicy"
-                        className="mb-3">
-                        Refund Policy
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-4 col-12 mb-4 mb-md-0 px-0 ">
-                  <h5 className="footer-title"> Infromation</h5>
-                  <ul className="footer-right-side">
-                    <li>
-                      <i className="fa-solid fa-location-dot"></i>
-                      <span>
-                        <a
-                          href="https://www.google.com/maps/place/323/4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145"
-                          className="px-2">
-                          4323 Wakefield Street,Philadelphia, Pennsylvania(PA),
-                          19145
-                        </a>
-                      </span>
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-headphones"></i>
-                      <span className="px-2">
-                        {' '}
-                        <a href="tel:919499874557">919499874557</a>
-                      </span>
-                    </li>
-                    <li>
-                      <i className="fa-regular fa-envelope"></i>
-                      <span className="px-2">
-                        <a href="mailto:scoophaven@gmail.com">
-                          scoophaven@gmail.com
-                        </a>
-                      </span>
-                    </li>
-                    <li>
-                      <i className="fa-regular fa-circle-question"></i>
-                      <span className="px-2">
-                        <a
-                          href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#examplehours"
-                          data-bs-whatever="@mdo">
-                          Hours
-                        </a>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr className="my-3" />
-          <div className="d-block d-md-flex align-items-center justify-content-center justify-content-md-between pb-3">
-            <p className="fs-7 pb-3 md-mb-0 lg-mb-0 xl-mb-0 text-md-start text-center">
-              Copyright © 2023 Gravity Infotech. All Rights Reserved
-            </p>
-            <div className="ml-lg-0 text-center text-md-end">
-              <a
-                className="btn btn-outline-light m-1 border-0 facebook"
-                role="button"
-                href="https://www.facebook.com/">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                className="btn btn-outline-light m-1 border-0"
-                href="https://twitter.com/"
-                role="button">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                className="btn btn-outline-light m-1 border-0"
-                href="https://www.linkedin.com/"
-                role="button">
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                className="btn btn-outline-light m-1 border-0"
-                href="https://www.instagram.com/"
-                role="button">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </>
   );
 };

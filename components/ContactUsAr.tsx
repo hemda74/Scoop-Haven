@@ -8,7 +8,7 @@ import {
   BsInstagram,
   BsQuestionCircle,
 } from 'react-icons/bs';
-const ContactUsEn = () => {
+const ContactUsAr = () => {
   const daysOfWeek = [
     { day: 'MONDAY', hours: '09:00 AM to 09:00 PM' },
     { day: 'TUESDAY', hours: '09:00 AM to 09:00 PM' },
@@ -50,10 +50,12 @@ const ContactUsEn = () => {
             <ol className="breadcrumb d-flex text-capitalize">
               <li className="breadcrumb-item">
                 <Link href="/" className="text-white">
-                  Home
+                  الرئيسية
                 </Link>
               </li>
-              <li className="breadcrumb-item active ">Contact us</li>
+              <li className="breadcrumb-item-ar active me-2 ">/</li>
+
+              <li className="breadcrumb-item-ar active me-2 ">تواصل معنا</li>
             </ol>
           </nav>
         </div>
@@ -66,13 +68,13 @@ const ContactUsEn = () => {
                 <div className="card-body">
                   <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                      <h2 className="page-title mb-1 px-2"> Contact us</h2>
+                      <h2 className="page-title mb-1 px-2">تواصل معنا</h2>
                       <p className="page-subtitle px-2 mb-3 md-mb-5"></p>
                     </div>
                     <div className="row mt-3">
                       <div className="col-md-6 mb-4">
                         <label htmlFor="first_name" className="form-label">
-                          First Name<span className="text-danger"> * </span>
+                          الاسم الاول<span className="text-danger"> * </span>
                         </label>
                         <input
                           type="text"
@@ -87,7 +89,7 @@ const ContactUsEn = () => {
                       </div>
                       <div className="col-md-6 mb-4">
                         <label htmlFor="last_name" className="form-label">
-                          Last Name<span className="text-danger"> * </span>
+                          اللقب<span className="text-danger"> * </span>
                         </label>
                         <input
                           type="text"
@@ -102,7 +104,7 @@ const ContactUsEn = () => {
                       </div>
                       <div className="col-md-6 mb-4">
                         <label htmlFor="email" className="form-label">
-                          Email<span className="text-danger"> * </span>
+                          الايميل<span className="text-danger"> * </span>
                         </label>
                         <input
                           type="email"
@@ -117,7 +119,7 @@ const ContactUsEn = () => {
                       </div>
                       <div className="col-md-6 mb-4">
                         <label htmlFor="mobile" className="form-label">
-                          Mobile<span className="text-danger"> * </span>
+                          الموبايل<span className="text-danger"> * </span>
                         </label>
                         <input
                           type="tel"
@@ -132,7 +134,7 @@ const ContactUsEn = () => {
                       </div>
                       <div className="col-md-12 mb-4">
                         <label htmlFor="message" className="form-label">
-                          Message<span className="text-danger"> * </span>
+                          الرسالة<span className="text-danger"> * </span>
                         </label>
                         <textarea
                           className="form-control input-h"
@@ -154,7 +156,7 @@ const ContactUsEn = () => {
                         <button
                           type="submit"
                           className="btn-primary mobile-viwe-btn">
-                          Submit
+                          تسجيل
                         </button>
                       </div>
                     </div>
@@ -247,4 +249,4 @@ const ContactUsEn = () => {
   );
 };
 
-export default ContactUsEn;
+export default ContactUsAr;

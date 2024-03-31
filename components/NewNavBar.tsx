@@ -22,45 +22,47 @@ const NewNavBar = () => {
               </a>
               <div className="d-flex align-items-center gap-3">
                 <nav className="align-items-center menu">
-                  <div id="deletebtn">
-                    <i className="fa-solid fa-xmark"></i>
-                  </div>
                   <ul className="navbar-nav header-menu-items">
                     <li className="nav-item dropdown header-dropdown-menu px-4">
-                      <a
+                      <Link
                         className="nav-link fw-bold fs-6"
-                        href="https://restro.infotechgravity.com/scoop-haven">
+                        href="/"
+                        data-trans="home">
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item dropdown header-dropdown-menu px-4">
-                      <a
+                      <Link
                         className="nav-link fw-bold fs-6"
-                        href="https://restro.infotechgravity.com/scoop-haven/aboutus">
+                        href="/aboutus"
+                        data-trans="aboutus">
                         About us
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item dropdown header-dropdown-menu px-4">
-                      <a
+                      <Link
                         className="nav-link fw-bold fs-6"
-                        href="https://restro.infotechgravity.com/scoop-haven/contact">
+                        href="/contact"
+                        data-trans="contact">
                         Contact us
-                      </a>
+                      </Link>
                     </li>
 
                     <li className="nav-item dropdown header-dropdown-menu px-4">
-                      <a
-                        href="https://restro.infotechgravity.com/scoop-haven/tablebook"
-                        className="nav-link fw-bold fs-6">
+                      <Link
+                        href="/tablebook"
+                        className="nav-link fw-bold fs-6"
+                        data-trans="tablebook">
                         Table Book
-                      </a>
+                      </Link>
                     </li>
 
                     <li className="nav-item dropdown header-dropdown-menu px-4">
                       <a
                         className="nav-link fw-bold fs-6"
                         data-bs-toggle="modal"
-                        data-bs-target="#searchModal">
+                        data-bs-target="#searchModal"
+                        data-trans="search">
                         Search
                       </a>
                     </li>
@@ -88,17 +90,21 @@ const NewNavBar = () => {
                       </Link>
                     </li>
 
-                    <a
-                      href="https://restro.infotechgravity.com/scoop-haven/login"
-                      className="login-button-mobile login-buuton d-lg-none">
+                    <Link
+                      href="/login"
+                      className="login-button-mobile login-buuton d-lg-none"
+                      data-trans="login">
                       Login
-                    </a>
+                    </Link>
                   </ul>
                 </nav>
 
                 <LocalizationBtn />
 
-                <Link href="/login" className="login-buuton d-none d-lg-block">
+                <Link
+                  href="/login"
+                  className="login-buuton d-none d-lg-block"
+                  data-trans="login">
                   Login
                 </Link>
               </div>

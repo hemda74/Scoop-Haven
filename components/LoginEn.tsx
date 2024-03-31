@@ -1,7 +1,27 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import { FaLock } from 'react-icons/fa6';
 
 const LoginEn = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    type: 'user',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+    // Handle form submission logic here
+  };
   return (
     <div>
       <section className="mt-0">
@@ -13,13 +33,7 @@ const LoginEn = () => {
                   <div className="card-body">
                     <form
                       className="row align-items-center justify-content-center m-auto py-md-3 py-lg-0 py-xxl-3"
-                      method="POST"
-                      action="https://restro.infotechgravity.com/scoop-haven/checklogin-normal">
-                      <input
-                        type="hidden"
-                        name="_token"
-                        value="sNUaYoThesftfi9L4dMQZ63ONX49yrcwdpHgLjq5"
-                      />{' '}
+                      onSubmit={handleSubmit}>
                       <div className="col-md-10">
                         <h2 className="form-title">Login</h2>
                         <p className="page-subtitle line-limit-3">
@@ -37,8 +51,10 @@ const LoginEn = () => {
                           type="email"
                           className="form-control input-h"
                           name="email"
-                          placeholder="Email"
                           id="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -50,8 +66,10 @@ const LoginEn = () => {
                           type="password"
                           className="form-control input-h"
                           name="password"
-                          placeholder="Password"
                           id="password"
+                          placeholder="Password"
+                          value={formData.password}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -62,12 +80,12 @@ const LoginEn = () => {
                         value="user"
                       />
                       <div className="text-end col-md-10 mb-3">
-                        <a
-                          href="https://restro.infotechgravity.com/scoop-haven/forgotpassword"
+                        <Link
+                          href="/forgotpassword"
                           className="fs-7 fw-semibold text-dark">
-                          <i className="fa-solid fa-lock mx-2 fs-7"></i>Forgot
-                          Password
-                        </a>
+                          <FaLock />
+                          Forgot Password
+                        </Link>
                       </div>
                       <div className="d-flex justify-content-center col-md-10 mb-3">
                         <input

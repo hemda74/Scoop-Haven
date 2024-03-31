@@ -1,9 +1,28 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import Link from 'next/link';
 const ForgotpasswordAr = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    type: 'user',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+    // Handle form submission logic here
+  };
+
   return (
     <>
-      <section className="mt-0" dir="rtl">
+      <section className="mt-0">
         <div className="row m-0 vh-100">
           <div className="col-lg-6 col-12 vh-100 d-flex justify-content-center align-items-center m-auto bg-light">
             <div className="right-side row justify-content-center align-items-center g-0">
@@ -12,18 +31,12 @@ const ForgotpasswordAr = () => {
                   <div className="card-body">
                     <form
                       className="row align-items-center justify-content-center m-auto py-md-3 py-lg-0 py-xxl-3"
-                      method="POST"
-                      action="https://restro.infotechgravity.com/scoop-haven/send_password">
-                      <input
-                        type="hidden"
-                        name="_token"
-                        value="sNUaYoThesftfi9L4dMQZ63ONX49yrcwdpHgLjq5"
-                      />{' '}
+                      onSubmit={handleSubmit}>
                       <div className="col-md-10">
                         <h2 className="form-title">نسيت كلمة المرور</h2>
                         <p className="page-subtitle line-limit-3">
-                          أدخل عنوان بريدك الإلكتروني المسجل أدناه وسنرسل كلمة
-                          المرور الجديدة إلى بريدك الإلكتروني
+                          ادخل الايميل المسجل وسوف يتم ارسال كلمة مرور جديدة الي
+                          بريدك الالكتروني
                         </p>
                       </div>
                       <div className="col-md-10 mb-3">
@@ -34,8 +47,10 @@ const ForgotpasswordAr = () => {
                           type="email"
                           className="form-control input-h"
                           name="email"
-                          placeholder="Email"
                           id="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -53,12 +68,12 @@ const ForgotpasswordAr = () => {
                         />
                       </div>
                       <p className="page-subtitle text-center mt-3">
-                        تذكرت كلمة المرور
-                        <a
-                          href="https://restro.infotechgravity.com/scoop-haven/login"
+                        تذكرت كلمة المرور ؟
+                        <Link
+                          href="/login"
                           className="text-primary fw-semibold text-dark">
                           تسجيل الدخول
-                        </a>
+                        </Link>
                       </p>
                     </form>
                   </div>

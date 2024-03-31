@@ -1,9 +1,30 @@
-import React from 'react';
 import Link from 'next/link';
+import React, { useState } from 'react';
+import { FaLock } from 'react-icons/fa6';
+
 const LoginAr = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    type: 'user',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+    // Handle form submission logic here
+  };
   return (
-    <>
-      <section className="mt-0" dir="rtl">
+    <div>
+      <section className="mt-0">
         <div className="row m-0 vh-100">
           <div className="col-lg-6 col-12 vh-100 d-flex justify-content-center align-items-center m-auto bg-light">
             <div className="right-side row justify-content-center align-items-center g-0">
@@ -12,15 +33,9 @@ const LoginAr = () => {
                   <div className="card-body">
                     <form
                       className="row align-items-center justify-content-center m-auto py-md-3 py-lg-0 py-xxl-3"
-                      method="POST"
-                      action="https://restro.infotechgravity.com/scoop-haven/checklogin-normal">
-                      <input
-                        type="hidden"
-                        name="_token"
-                        value="sNUaYoThesftfi9L4dMQZ63ONX49yrcwdpHgLjq5"
-                      />{' '}
+                      onSubmit={handleSubmit}>
                       <div className="col-md-10">
-                        <h2 className="form-title">تسجيل الدخول</h2>
+                        <h2 className="form-title">Login</h2>
                         <p className="page-subtitle line-limit-3">
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Quam quasi odio corrupti, sunt esse atque, sed
@@ -36,8 +51,10 @@ const LoginAr = () => {
                           type="email"
                           className="form-control input-h"
                           name="email"
-                          placeholder="Email"
                           id="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -49,8 +66,10 @@ const LoginAr = () => {
                           type="password"
                           className="form-control input-h"
                           name="password"
-                          placeholder="Password"
                           id="password"
+                          placeholder="Password"
+                          value={formData.password}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -61,12 +80,12 @@ const LoginAr = () => {
                         value="user"
                       />
                       <div className="text-end col-md-10 mb-3">
-                        <a
-                          href="https://restro.infotechgravity.com/scoop-haven/forgotpassword"
+                        <Link
+                          href="/forgotpassword"
                           className="fs-7 fw-semibold text-dark">
-                          <i className="fa-solid fa-lock mx-2 fs-7"></i>نسيت
-                          كلمة المرور
-                        </a>
+                          <FaLock />
+                          نسيت كلمة المرور
+                        </Link>
                       </div>
                       <div className="d-flex justify-content-center col-md-10 mb-3">
                         <input
@@ -76,11 +95,11 @@ const LoginAr = () => {
                         />
                       </div>
                       <p className="page-subtitle text-center mt-3">
-                        لا تملتك حساب ؟
+                        لا تكلمك حساب ؟
                         <Link
                           href="/register"
-                          className="text-primary fw-semibold text-dark me-2">
-                          حساب جديد
+                          className="text-primary fw-semibold text-dark">
+                          تسجيل حساب جديد
                         </Link>
                       </p>
                     </form>
@@ -100,7 +119,7 @@ const LoginAr = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,25 @@
-import React from 'react';
-
+import Link from 'next/link';
+import React, { useState } from 'react';
 const RigisterEn = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    password: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <>
       <section className="mt-0 registration">
@@ -12,13 +31,7 @@ const RigisterEn = () => {
                   <div className="card-body">
                     <form
                       className="row align-items-center justify-content-center m-auto py-md-3 py-lg-0 py-xxl-3"
-                      method="POST"
-                      action="https://restro.infotechgravity.com/scoop-haven/register_customer">
-                      <input
-                        type="hidden"
-                        name="_token"
-                        value="sNUaYoThesftfi9L4dMQZ63ONX49yrcwdpHgLjq5"
-                      />{' '}
+                      onSubmit={handleSubmit}>
                       <div className="col-md-10">
                         <h2 className="form-title">Register</h2>
                         <p className="page-subtitle col line-limit-3">
@@ -32,11 +45,13 @@ const RigisterEn = () => {
                           Name<span className="text-danger"> * </span>
                         </label>
                         <input
-                          type="name"
+                          type="text"
                           className="form-control input-h"
                           name="name"
-                          placeholder="Name"
                           id="Name"
+                          placeholder="Name"
+                          value={formData.name}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -48,8 +63,10 @@ const RigisterEn = () => {
                           type="email"
                           className="form-control input-h"
                           name="email"
-                          placeholder="Email"
                           id="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -61,8 +78,10 @@ const RigisterEn = () => {
                           type="tel"
                           className="form-control input-h"
                           name="mobile"
-                          placeholder="Mobile"
                           id="mobile"
+                          placeholder="Mobile"
+                          value={formData.mobile}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -74,8 +93,10 @@ const RigisterEn = () => {
                           type="password"
                           className="form-control input-h"
                           name="password"
-                          placeholder="Password"
                           id="password"
+                          placeholder="Password"
+                          value={formData.password}
+                          onChange={handleChange}
                           required
                         />
                       </div>
@@ -92,47 +113,18 @@ const RigisterEn = () => {
                           className="form-check-label mx-2 page-subtitle mb-0"
                           htmlFor="flexCheckDefault">
                           I accept the
-                          <a
-                            href="https://restro.infotechgravity.com/scoop-haven/terms_condition"
+                          <Link
+                            href="/terms_condition"
                             className="text-primary fw-semibold text-dark">
                             Terms &amp; Conditions
-                          </a>
+                          </Link>
                         </label>
                       </div>
                       <div className="col-md-10 mb-3 d-flex align-items-center">
                         <div className="col-12">
                           <div
                             className="g-recaptcha"
-                            data-sitekey="6LeJATImAAAAACnNFVNbxjCRseVp4lcQn8FdFI9N">
-                            <div style={{ width: '304px', height: '78px' }}>
-                              <div>
-                                <iframe
-                                  title="reCAPTCHA"
-                                  width="304"
-                                  height="78"
-                                  role="presentation"
-                                  name="a-4fgrar2qmmvv"
-                                  frameBorder="0"
-                                  scrolling="no"
-                                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                                  src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeJATImAAAAACnNFVNbxjCRseVp4lcQn8FdFI9N&amp;co=aHR0cHM6Ly9yZXN0cm8uaW5mb3RlY2hncmF2aXR5LmNvbTo0NDM.&amp;hl=en&amp;v=moV1mTgQ6S91nuTnmll4Y9yf&amp;size=normal&amp;cb=wlfimuaaa1t5"></iframe>
-                              </div>
-                              <textarea
-                                id="g-recaptcha-response"
-                                name="g-recaptcha-response"
-                                className="g-recaptcha-response"
-                                style={{
-                                  width: '250px',
-                                  height: '40px',
-                                  border: '1px solid rgb(193, 193, 193)',
-                                  margin: '10px 25px',
-                                  padding: '0px',
-                                  resize: 'none',
-                                  display: 'none',
-                                }}></textarea>
-                            </div>
-                            <iframe style={{ display: 'none' }}></iframe>
-                          </div>
+                            data-sitekey="6LeJATImAAAAACnNFVNbxjCRseVp4lcQn8FdFI9N"></div>
                         </div>
                       </div>
                       <div className="d-flex justify-content-center col-md-10 mb-3">
@@ -144,11 +136,11 @@ const RigisterEn = () => {
                       </div>
                       <p className="page-subtitle text-center">
                         Already have an account?
-                        <a
-                          href="https://restro.infotechgravity.com/scoop-haven/login"
+                        <Link
+                          href="/login"
                           className="text-primary fw-semibold text-dark">
                           Login
-                        </a>
+                        </Link>
                       </p>
                     </form>
                   </div>

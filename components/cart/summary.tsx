@@ -1,5 +1,3 @@
-'use client';
-
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -35,21 +33,30 @@ const Summary = () => {
   };
 
   return (
-    <div className="mt-16 rounded-lg bg-light px-4 py-6 sm-px-6 lg-col-span-5 lg-mt-0 lg-p-8">
-      <h2 className="text-lg fw-medium text-dark">Order summary</h2>
-      <div className="mt-6">
-        <div className="d-flex align-items-center justify-content-between border-top border-secondary pt-4">
-          <div className="text-base fw-medium text-dark">Order total</div>
-          {totalPrice}
-        </div>
-      </div>
+    <>
+      <p className="title pb-2">Order summary</p>
+      <ul className="list-group list-group-flush order-summary-list">
+        <li className="list-group-item">
+          Subtotal
+          <span>{totalPrice}</span>
+        </li>
+        <li className="list-group-item">
+          Tax
+          <span>€0.00</span>
+        </li>
+        <li className="list-group-item fw-700 text-success">
+          Order Total
+          <span className="fw-700 text-success">{totalPrice}</span>
+        </li>
+      </ul>
+
       <button
         onClick={onCheckout}
         disabled={items.length === 0}
-        className="w-100 mt-3">
+        className="btn-primary rounded-3 mt-4 text-center">
         Checkout
       </button>
-    </div>
+    </>
   );
 };
 

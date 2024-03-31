@@ -41,22 +41,27 @@ const CartPage: NextPageWithLayout = () => {
         </div>
       </div>
 
-      <div className="bg-white" style={{ margin: '3rem 0 3rem 0' }}>
+      <div className="theme-1-margin-top">
         <div className="container">
-          <div className="px-4 py-16 sm-px-6 lg-px-8">
-            <h1 className="text-3xl fw-bold text-dark">Shopping Cart</h1>
-            <div className="mt-12 lg-grid lg-grid-cols-12 lg-items-start gap-x-12">
-              <div className="lg-col-span-7">
-                {cart.items.length === 0 && (
-                  <p className="text-secondary">No items added to cart.</p>
-                )}
-                <ul>
-                  {cart.items.map(item => (
-                    <CartItem key={item.id} data={item} />
-                  ))}
-                </ul>
+          <div className=" py-4">
+            <div className="row border-top gx-2">
+              <div className="col-md-12 col-lg-8 pb-4 px-0 pe-lg-5">
+                <div className="row align-items-center py-3">
+                  {cart.items.length === 0 && (
+                    <p className="text-secondary">No items added to cart.</p>
+                  )}
+                  <ul>
+                    {cart.items.map(item => (
+                      <CartItem key={item.id} data={item} />
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <Summary />
+              <div className="col-md-12 col-lg-4 px-0">
+                <div className="card my-4 border p-3 rounded-4 shadow">
+                  <Summary />
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -15,24 +15,33 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
   };
 
   return (
-    <li className="d-flex py-6 border-bottom">
-      <div className="  rounded-md overflow-hidden d-flex align-items-center justify-content-center sm-h-48 sm-w-48">
+    <li>
+      <div className="card my-cart-categories border-bottom rounded-0 dark px-0">
         <img
           src={data.imageUrl}
           alt=""
-          className="img-fluid"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          className="card-img-top p-0 object-fit-cover border rounded-4"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+            width: '85px',
+            height: '85px',
+          }}
         />
-      </div>
-      <div className=" ml-4 d-flex justify-content-between sm-ml-6">
-        <div className="ms-auto ">
-          <button onClick={onRemove}>X</button>
-        </div>
-        <div className=" pr-9 sm-grid sm-grid-cols-2 sm-gap-x-6 sm-pr-0">
-          <div className="d-flex justify-content-between">
-            <p className="text-lg fw-bold text-black">{data.name}</p>
+        <div className="card-body pe-0">
+          <div className="text-section">
+            <div className="d-flex justify-content-between align-items-center mb-1">
+              <p className="title fs-6">{data.name}</p>
+              <button
+                onClick={onRemove}
+                className="fs-7 fw-400 pointer text-center btn btn-outline-danger">
+                Remove
+              </button>
+            </div>
+            <div className="d-flex justify-content-between align-items-center">
+              <p className="price fs-6">{data.price}</p>
+            </div>
           </div>
-          <div>{data.price}</div>
         </div>
       </div>
     </li>

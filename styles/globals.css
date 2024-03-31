@@ -1404,8 +1404,8 @@ table.table-bordered.dataTable tbody td {
 
 .my-cart-categories {
   max-width: 100%;
-  flex-direction: row;
-  border: 0;
+  flex-direction: row !important;
+  border: none !important;
 }
 
 .my-cart-categories img {

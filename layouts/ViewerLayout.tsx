@@ -19,6 +19,7 @@ const ViewerLayout = ({ childern }: LayoutProps) => {
         <main className={`${styles.bodyContainer}`}>
           <NewNavBar />
           {childern}
+          <Footer />
         </main>
       ) : (
         <main className={`${styles.bodyContainer}`}>

@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 
-const AboutUsEn = () => {
+const RefundPolicyEn = () => {
   return (
     <>
       <div>
         <div className="breadcrumb-sec">
           <div className="container">
             <nav className="px-2">
-              <h3 className="page-title text-white mb-2">About us</h3>
+              <h3 className="page-title text-white mb-2">Refund Policy</h3>
 
               <ol className="breadcrumb d-flex text-capitalize">
                 <li className="breadcrumb-item">
@@ -17,7 +17,7 @@ const AboutUsEn = () => {
                   </Link>
                 </li>
 
-                <li className="breadcrumb-item active ">About us</li>
+                <li className="breadcrumb-item active ">Refund Policy</li>
               </ol>
             </nav>
           </div>
@@ -28,7 +28,7 @@ const AboutUsEn = () => {
               <div className="cms-section my-3">
                 <p style={{ marginLeft: '5em' }}>
                   <big>
-                    <strong>About Us</strong>
+                    <strong>Refund Policy</strong>
                   </big>
                 </p>
 
@@ -166,4 +166,4 @@ const AboutUsEn = () => {
   );
 };
 
-export default AboutUsEn;
+export default RefundPolicyEn;

@@ -5,8 +5,8 @@ import { useLanguage } from '../Context/LanguageContext';
 import Layout from '../components/Layout';
 import styles from '../styles/Main.module.css';
 import ViewerLayout from '../layouts/ViewerLayout';
-import TableBookEn from '../components/TableBookEn';
-import TableBookAr from '../components/TableBookAr';
+import RefundPolicyEn from '../components/RefundPolicyEn';
+import RefundPolicyAr from '../components/RefundPolicyAr';
 
 type Props = {};
 const Index: NextPageWithLayout = (props: Props) => {
@@ -19,11 +19,11 @@ const Index: NextPageWithLayout = (props: Props) => {
       <Layout>
         {language === 'en' ? (
           <main className={`${styles.bodyContainer}`}>
-            <TableBookEn />
+            <RefundPolicyEn />
           </main>
         ) : (
           <main className={`${styles.bodyContainer}`}>
-            <TableBookAr />
+            <RefundPolicyAr />
           </main>
         )}
       </Layout>

@@ -1,23 +1,25 @@
 import Link from 'next/link';
 import React from 'react';
 
-const AboutUsEn = () => {
+const PrivacyPolicyAr = () => {
   return (
     <>
-      <div>
+      <div dir="rtl">
         <div className="breadcrumb-sec">
           <div className="container">
             <nav className="px-2">
-              <h3 className="page-title text-white mb-2">About us</h3>
-
+              <h3 className="page-title text-white mb-2">سياسة الخصوصية</h3>
               <ol className="breadcrumb d-flex text-capitalize">
-                <li className="breadcrumb-item">
+                <li className="breadcrumb-item-ar">
                   <Link href="/" className="text-white">
-                    Home
+                    الرئيسية
                   </Link>
                 </li>
+                <li className="breadcrumb-item-ar active me-2">/</li>
 
-                <li className="breadcrumb-item active ">About us</li>
+                <li className="breadcrumb-item-ar active me-2 ">
+                  سياسة الخصوصية
+                </li>
               </ol>
             </nav>
           </div>
@@ -26,13 +28,14 @@ const AboutUsEn = () => {
           <div className="container">
             <div className="details row">
               <div className="cms-section my-3">
-                <p style={{ marginLeft: '5em' }}>
+                <p style={{ marginRight: '5em' }}>
                   <big>
-                    <strong>About Us</strong>
+                    <strong>سياسة الخصوصية</strong>
                   </big>
                 </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -48,9 +51,11 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -66,9 +71,11 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -84,9 +91,11 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -102,9 +111,11 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -120,9 +131,11 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -138,9 +151,11 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
 
-                <p style={{ marginLeft: '5em' }}>{`
+                <p style={{ marginRight: '5em' }}>
+                  {`
                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae
@@ -156,7 +171,8 @@ const AboutUsEn = () => {
                 reprehenderit qui in ea voluptate velit esse quam nihil
                 molestiae consequatur, vel illum qui dolorem eum fugiat quo
                 voluptas nulla pariatur?"
-              `}</p>
+             `}
+                </p>
               </div>
             </div>
           </div>
@@ -166,4 +182,4 @@ const AboutUsEn = () => {
   );
 };
 
-export default AboutUsEn;
+export default PrivacyPolicyAr;

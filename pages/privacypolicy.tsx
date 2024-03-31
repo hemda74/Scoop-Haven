@@ -5,8 +5,10 @@ import { useLanguage } from '../Context/LanguageContext';
 import Layout from '../components/Layout';
 import styles from '../styles/Main.module.css';
 import ViewerLayout from '../layouts/ViewerLayout';
-import TableBookEn from '../components/TableBookEn';
-import TableBookAr from '../components/TableBookAr';
+import TermsConditionsEn from '../components/TermsCondtionsEn';
+import TermsConditionsAr from '../components/TermsConditionsAr';
+import PrivacyPolicyEn from '../components/PrivacyPolicyEn';
+import PrivacyPolicyAr from '../components/PrivacyPolicyAr';
 
 type Props = {};
 const Index: NextPageWithLayout = (props: Props) => {
@@ -19,11 +21,11 @@ const Index: NextPageWithLayout = (props: Props) => {
       <Layout>
         {language === 'en' ? (
           <main className={`${styles.bodyContainer}`}>
-            <TableBookEn />
+            <PrivacyPolicyEn />
           </main>
         ) : (
           <main className={`${styles.bodyContainer}`}>
-            <TableBookAr />
+            <PrivacyPolicyAr />
           </main>
         )}
       </Layout>

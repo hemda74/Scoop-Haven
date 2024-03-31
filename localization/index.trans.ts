@@ -9,43 +9,31 @@ const indexTrans: translataionContainer = {
     en: 'ع',
     ar: 'E',
   },
-  //////////////< Titles >////////////////////
-  CASCOTitle: {
-    en: 'CASCO',
-    ar: 'كاسكو',
-  },
+
   /////////////////////////////< NavBar >/////////////////////////////////////////////
-  AboutCascoNav: {
-    en: 'ABOUT CASCO',
-    ar: 'عن كاسكو',
+  login: {
+    en: 'Login',
+    ar: 'تسجيل الدخول',
   },
-  DirectorMangerNav: {
-    en: 'Managing Director',
-    ar: 'المدير العام',
+  search: {
+    en: 'Search',
+    ar: 'بحث',
   },
-  CareersNav: {
-    en: 'CAREERS',
-    ar: 'وظائف',
+  tablebook: {
+    en: 'Table Book',
+    ar: 'كتاب الجدول',
   },
-  ServicesNav: {
-    en: 'SERVICES',
-    ar: 'الخدمات',
+  contact: {
+    en: 'Contact us',
+    ar: 'تواصل معنا',
   },
-  CoursesNav: {
-    en: 'COURSES',
-    ar: 'الكورسات',
+  aboutus: {
+    en: 'About us',
+    ar: 'عن الموقع',
   },
-  industriesNav: {
-    en: 'INDUSTRIES',
-    ar: 'الصناعات',
-  },
-  ContactUsNav: {
-    en: 'CONTACT US',
-    ar: 'تواصل معنا ',
-  },
-  NewsNav: {
-    en: 'NEWS & INSIGHTS',
-    ar: 'الأخبار والرؤى',
+  home: {
+    en: 'Home',
+    ar: 'الرئيسية',
   },
   /////////////////////////////< NavBar >/////////////////////////////////////////////
 };

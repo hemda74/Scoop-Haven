@@ -1,8 +1,33 @@
 import React, { MouseEventHandler } from 'react';
 import LocalizationBtn from './LocaliazationBtn';
 import FeaturedProducts from './FeaturedProducts';
-import { FaUser, FaPlus, FaUtensils, FaAngleRight } from 'react-icons/fa';
+import {
+  FaUser,
+  FaPlus,
+  FaUtensils,
+  FaAngleRight,
+  FaHeadphonesAlt,
+  FaRegEnvelope,
+  FaClipboardCheck,
+  FaSearch,
+  FaEllipsisV,
+  FaEnvelope,
+  FaRegAddressCard,
+  FaRegStickyNote,
+  FaBell,
+} from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
+
+import {
+  FaPhoneVolume,
+  FaLocationDot,
+  FaRegCircleQuestion,
+  FaHouse,
+  FaBoxArchive,
+  FaFileLines,
+  FaBuildingShield,
+} from 'react-icons/fa6';
+
 import { Product } from '../types';
 import Link from 'next/link';
 import useCart from '../hooks/use-cart';
@@ -355,8 +380,8 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                         <button
                           type="button"
                           className="btn theme-3-icon-box my-svg-class iconwhiteadd text-color-class"
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal">
+                          data-toggle="modal"
+                          data-target="#exampleModal">
                           <IoIosSearch size={20} />
                         </button>
                       </div>
@@ -489,7 +514,7 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                     <a
                       className="nav-link position-relative active "
                       href="https://restro.infotechgravity.com/scoop-haven">
-                      <i className="fa-light fa-house"></i>
+                      <FaHouse />
                       <span className="act-8">Home</span>
                     </a>
                   </li>
@@ -498,7 +523,7 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                       className="nav-link position-relative"
                       data-bs-toggle="modal"
                       data-bs-target="#searchModal">
-                      <i className="fa-light fa-search"></i>
+                      <IoIosSearch />
                       <span className="act-8">Search</span>
                     </a>
                   </li>
@@ -509,23 +534,32 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                       data-bs-toggle="offcanvas"
                       role="button"
                       aria-controls="offcanvascategori">
-                      <i className="fa-light fa-box-archive"></i>
+                      <FaBoxArchive />
                       <span className="act-8">Menu</span>
                     </a>
                   </li>
                   <li className="">
-                    <a
-                      className="nav-link position-relative d-lg-none "
-                      href="https://restro.infotechgravity.com/scoop-haven/cart">
-                      <i className="fa-light fa-bag-shopping position-relative">
-                        <div
-                          className="cart-3 mx-2 d-lg-none "
-                          id="cartcount_mobile">
-                          0
-                        </div>
-                      </i>
-                      <span>Your Cart</span>
-                    </a>
+                    <Link
+                      href="/cart"
+                      className="position-relative cart-icon-color d-lg-block d-none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19.691"
+                        height="25"
+                        viewBox="0 0 19.691 25"
+                        className="theme-3-cart mx-1 active svg-bg">
+                        <path
+                          id="Path_8965"
+                          data-name="Path 8965"
+                          d="M32.526,10.38H29.137V9.621a5.667,5.667,0,1,0-11.334,0v.759H14.413a.8.8,0,0,0-.813.813V26.812A2.089,2.089,0,0,0,15.688,28.9H31.2a2.089,2.089,0,0,0,2.088-2.088V11.167A.733.733,0,0,0,32.526,10.38Zm-13.1-.786a4.04,4.04,0,1,1,8.08,0v.759H19.43Zm11.8,17.679H15.715a.486.486,0,0,1-.488-.488V11.98H31.713v14.8A.486.486,0,0,1,31.225,27.273Z"
+                          transform="translate(-13.6 -3.9)"></path>
+                      </svg>
+                      <span
+                        className="cart-counting-color svg-bg"
+                        id="cartcount">
+                        {cart.items.length}
+                      </span>
+                    </Link>
                   </li>
                   <li className="nav-link position-relative">
                     <a
@@ -533,7 +567,7 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                       href="#offcanvasinfo"
                       role="button"
                       aria-controls="offcanvasinfo">
-                      <i className="fa-light fa-ellipsis-vertical fs-6"></i>
+                      <FaEllipsisV />
                       <span>More</span>
                     </a>
                   </li>
@@ -585,9 +619,9 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                           <a
                             href="tel:919499874557"
                             className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
-                            <i className="fa-solid fa-phone-volume"></i>
+                            <FaPhoneVolume />
                             <div className="d-md-block d-none">
-                              <span className="px-3"> Call US</span>
+                              <span className="px-2">Call us</span>
                             </div>
                           </a>
                         </div>
@@ -595,7 +629,7 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
                           <a
                             href="mailto:scoophaven@gmail.com"
                             className="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center">
-                            <i className="fa-solid fa-envelope"></i>
+                            <FaEnvelope />
                             <div className="d-md-block d-none">
                               <span className="px-3"> Email</span>
                             </div>
@@ -612,27 +646,25 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
             <a
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="https://www.google.com/maps/place/323/4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145">
-              <i className="fa-solid fa-location-dot"></i>
+              <FaLocationDot />
               <span className="w-100">
-                <p className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-                  4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145
-                </p>
+                4323 Wakefield Street,Philadelphia, Pennsylvania(PA), 19145
               </span>
             </a>
             <a
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="tel:919499874557">
-              <i className="fa-solid fa-headphones"></i>
+              <FaHeadphonesAlt />
               <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-                Call US<p>+919499874557</p>
+                Call US +919499874557
               </span>
             </a>
             <a
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="mailto:scoophaven@gmail.com">
-              <i className="fa-regular fa-envelope"></i>
+              <FaEnvelope />
               <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-                Email<p>scoophaven@gmail.com</p>
+                Email scoophaven@gmail.com
               </span>
             </a>
             <a
@@ -641,58 +673,58 @@ const MainPageEn: React.FC<ProductCard> = ({ items, data }) => {
               data-bs-toggle="modal"
               data-bs-target="#examplehours"
               data-bs-whatever="@mdo">
-              <i className="fa-regular fa-circle-question"></i>
+              <FaRegCircleQuestion />
               <span className="px-2 fw-400 w-100 d-flex gap-1 align-items-center">
-                <p
+                <span
                   data-bs-toggle="modal"
                   data-bs-target="#examplehours"
                   data-bs-whatever="@mdo">
                   Working Hours
-                </p>
+                </span>
               </span>
             </a>
             <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="/blog-list">
-              <i className="fa-regular fa-clipboard"></i>
-              <p className="px-2 fw-400">Blogs</p>
+              <FaClipboardCheck />
+              <span className="px-2 fw-400">Blogs</span>
             </Link>
             <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="/aboutus">
-              <i className="fa-regular fa-file-lines"></i>
-              <p className="px-2 fw-400">About us</p>
+              <FaFileLines />
+              <span className="px-2 fw-400">About us</span>
             </Link>
             <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="/contact">
-              <i className="fa-regular fa-address-card"></i>
-              <p className="px-2 fw-400">Contact us</p>
+              <FaRegAddressCard />
+              <span className="px-2 fw-400">Contact us</span>
             </Link>
             <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="/terms_condition">
-              <i className="fa-regular fa-note-sticky"></i>
-              <p className="px-2 fw-400">Terms & Conditions</p>
+              <FaRegStickyNote />
+              <span className="px-2 fw-400">Terms & Conditions</span>
             </Link>
             <Link
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
               href="/privacypolicy">
-              <i className="fa-solid fa-building-shield"></i>
-              <p className="px-2 fw-400">Privacy Policy</p>
+              <FaBuildingShield />
+              <span className="px-2 fw-400">Privacy Policy</span>
             </Link>
             <a
               className="list-group-item rounded-0 d-flex align-items-center gap-2"
-              href="javascript:void(0)"
+              href=""
               data-bs-toggle="modal"
               data-bs-target="#subscribe_modal">
-              <i className="fa-solid fa-bell"></i>
-              <p
+              <FaBell />
+              <span
                 data-bs-toggle="modal"
                 data-bs-target="#subscribe_modal"
                 className="px-2 fw-400">
                 Subscribe
-              </p>
+              </span>
             </a>
           </ul>
         </div>

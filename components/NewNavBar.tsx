@@ -111,6 +111,65 @@ const NewNavBar = () => {
           </div>
         </div>
       </header>
+      <div className="d-flex align-items-center float-end">
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex={-1}
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <span className="modal-title fs-3" id="exampleModalLabel">
+                  Modal title
+                </span>
+              </div>
+              <div className="modal-body px-3 px-md-4 mb-0">
+                <form
+                  className=""
+                  action="https://restro.infotechgravity.com/scoop-haven/search"
+                  method="get">
+                  <div className="col-12">
+                    <div className="row align-items-center justify-content-between g-0">
+                      <span>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                      </span>
+                      <div className="col-12">
+                        <input type="hidden" name="vendor_id" value="19" />
+                        <input
+                          type="text"
+                          placeholder="Ex.accessories, man, dresses, etc..."
+                          name="search"
+                          id="searchText"
+                          className="py-2 input-width px-2 mt-3 mb-1 w-100 border rounded-5 fs-7 search_input"
+                          value=""
+                        />
+                        <div className="search-btn-group">
+                          <div className="d-flex justify-content-between align-items-center mt-3 mt-md-4">
+                            <a
+                              type="submit"
+                              className="btn btn-danger w-100 p-3 rounded-0 rounded-3 m-1 text-center"
+                              data-bs-dismiss="modal">
+                              Cancel
+                            </a>
+                            <input
+                              type="submit"
+                              className="btn-primary w-100 rounded-0 rounded-3 m-1 text-center"
+                              value="Submit"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
